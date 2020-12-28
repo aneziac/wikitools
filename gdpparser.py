@@ -35,6 +35,7 @@ def get_country_data(year, download_new=False):
     # read sheet
     w = WEO('weo.csv')
     countries = w.df
+    # countries = weo.weo.read_csv('WEOOct2020all.xls')
 
     # grab the right data
     countries = countries[countries['Subject Descriptor'] == 'Gross domestic product, current prices']
@@ -62,7 +63,6 @@ def get_country_data(year, download_new=False):
         'Lao P.D.R.': 'Laos',
         'Brunei Darussalam': 'Brunei',
         'Kyrgyz Republic': 'Kyrgyzstan',
-        'Syria': 'Syria (2010)'
     }
     for item in replacements:
         countries = countries.replace(item, replacements[item])
@@ -82,7 +82,7 @@ def combine_data(sheet1, sheet2):
     # add notes
     data['Notes'] = ''
     add_note('China', 'Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.')
-    add_note('Syria (2010)', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
+    add_note('Syria', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
     add_note('Russia', 'Figures exclude Republic of Crimea and Sevastopol.')
 
     return data
@@ -95,14 +95,16 @@ def write_wikitable(year, data):
     # create sortable centered wikitable with titles
     out.write('{| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"')
     out.write('\n|+ National GDPs and U.S. State GDPs, ' + year)
-    out.write('\n! Rank !! Country or U.S. state !! GDP (USD million)\n')
+    out.write('\n! Rank !! Country or U.S. State !! GDP (USD million)\n')
 
     # read data, add to file, and close file
     for row in range(len(data)):
         flag = '{{flag|' + data.iloc[row, 0] + '}}'
 
         # bold US states
-        if data.iloc[row, 2]:
+        if data.iloc[row, 0] in ['Puerto Rico', 'District of Columbia', 'Hong Kong', 'Macau']:
+            flag = "''" + flag + (' (China)' if data.iloc[row, 0] in ['Hong Kong', 'Macau'] else ' (United States)') + "''"
+        elif data.iloc[row, 2]:
             flag = "'''" + flag + "'''"
 
         out.write('|-\n| ' + str(row + 1) + ' || align="left" | ' + flag)

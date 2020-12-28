@@ -1,6 +1,6 @@
 {| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"
 |+ National GDPs and U.S. State GDPs, 2019
-! Rank !! Country or U.S. state !! GDP (USD million)
+! Rank !! Country or U.S. State !! GDP (USD million)
 |-
 | 1 || align="left" | {{flag|United States}} || 21,439,453
 |-
@@ -108,7 +108,7 @@
 |-
 | 53 || align="left" | '''{{flag|Arizona}}''' || 379,019
 |-
-| 54 || align="left" | {{flag|''Hong Kong (China)''}} || 372,989
+| 54 || align="left" | ''{{flag|Hong Kong}} (China)'' || 372,989
 |-
 | 55 || align="left" | {{flag|Malaysia}} || 365,303
 |-
@@ -184,7 +184,7 @@
 |-
 | 91 || align="left" | {{flag|Ukraine}} || 150,401
 |-
-| 92 || align="left" | '''{{flag|District of Columbia}}''' || 145,278
+| 92 || align="left" | ''{{flag|District of Columbia}} (United States)'' || 145,278
 |-
 | 93 || align="left" | {{flag|Kuwait}} || 137,591
 |-
@@ -202,7 +202,7 @@
 |-
 | 100 || align="left" | {{flag|Slovakia}} || 106,552
 |-
-| 101 || align="left" | {{flag|''Puerto Rico (United States)''}} || 99,913
+| 101 || align="left" | ''{{flag|Puerto Rico}} (United States)'' || 99,913
 |-
 | 102 || align="left" | {{flag|Kenya}} || 98,607
 |-
@@ -264,7 +264,7 @@
 |-
 | 131 || align="left" | '''{{flag|South Dakota}}''' || 56,052
 |-
-| 132 || align="left" | {{flag|''Macau (China)''}} || 55,136
+| 132 || align="left" | ''{{flag|Macau}} (China)'' || 55,136
 |-
 | 133 || align="left" | '''{{flag|Alaska}}''' || 54,675
 |-
