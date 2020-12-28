@@ -1,5 +1,5 @@
 {| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"
-|+ National GDPs and U.S. State GDPs, 2020
+|+ National GDPs and U.S. State GDPs, 2019
 ! Rank !! Country or U.S. state !! GDP (USD million)
 |-
 | 1 || align="left" | {{flag|United States}} || 21,439,453
@@ -10,7 +10,7 @@
 |-
 | 4 || align="left" | {{flag|Germany}} || 3,863,344
 |-
-| 5 || align="left" style = "background: #D3D3D3; "| {{flag|California}} || 3,205,000
+| 5 || align="left" | '''{{flag|California}}''' || 3,205,000
 |-
 | 6 || align="left" | {{flag|India}} || 2,935,570
 |-
@@ -20,17 +20,17 @@
 |-
 | 9 || align="left" | {{flag|Italy}} || 1,988,636
 |-
-| 10 || align="left" style = "background: #D3D3D3; "| {{flag|Texas}} || 1,861,582
+| 10 || align="left" | '''{{flag|Texas}}''' || 1,861,582
 |-
 | 11 || align="left" | {{flag|Brazil}} || 1,847,020
 |-
-| 12 || align="left" style = "background: #D3D3D3; "| {{flag|New York}} || 1,791,567
+| 12 || align="left" | '''{{flag|New York}}''' || 1,791,567
 |-
 | 13 || align="left" | {{flag|Canada}} || 1,730,914
 |-
 | 14 || align="left" | {{flag|Russia}}{{refn|Figures exclude Republic of Crimea and Sevastopol.}} || 1,637,892
 |-
-| 15 || align="left" | {{flag|Korea}} || 1,629,532
+| 15 || align="left" | {{flag|South Korea}} || 1,629,532
 |-
 | 16 || align="left" | {{flag|Spain}} || 1,397,870
 |-
@@ -38,15 +38,15 @@
 |-
 | 18 || align="left" | {{flag|Mexico}} || 1,274,175
 |-
-| 19 || align="left" style = "background: #D3D3D3; "| {{flag|Florida}} || 1,126,510
+| 19 || align="left" | '''{{flag|Florida}}''' || 1,126,510
 |-
 | 20 || align="left" | {{flag|Indonesia}} || 1,111,713
 |-
 | 21 || align="left" | {{flag|Netherlands}} || 902,355
 |-
-| 22 || align="left" style = "background: #D3D3D3; "| {{flag|Illinois}} || 893,356
+| 22 || align="left" | '''{{flag|Illinois}}''' || 893,356
 |-
-| 23 || align="left" style = "background: #D3D3D3; "| {{flag|Pennsylvania}} || 818,449
+| 23 || align="left" | '''{{flag|Pennsylvania}}''' || 818,449
 |-
 | 24 || align="left" | {{flag|Saudi Arabia}} || 779,289
 |-
@@ -54,25 +54,25 @@
 |-
 | 26 || align="left" | {{flag|Switzerland}} || 715,360
 |-
-| 27 || align="left" style = "background: #D3D3D3; "| {{flag|Ohio}} || 703,369
+| 27 || align="left" | '''{{flag|Ohio}}''' || 703,369
 |-
-| 28 || align="left" style = "background: #D3D3D3; "| {{flag|New Jersey}} || 642,968
+| 28 || align="left" | '''{{flag|New Jersey}}''' || 642,968
 |-
-| 29 || align="left" style = "background: #D3D3D3; "| {{flag|Georgia (U.S. state)|name=Georgia}} || 634,138
+| 29 || align="left" | '''{{flag|Georgia (U.S. state)|name=Georgia}}''' || 634,138
 |-
-| 30 || align="left" style = "background: #D3D3D3; "| {{flag|Washington}} || 624,861
+| 30 || align="left" | '''{{flag|Washington}}''' || 624,861
 |-
-| 31 || align="left" style = "background: #D3D3D3; "| {{flag|Massachusetts}} || 603,210
+| 31 || align="left" | '''{{flag|Massachusetts}}''' || 603,210
 |-
-| 32 || align="left" style = "background: #D3D3D3; "| {{flag|North Carolina}} || 601,788
+| 32 || align="left" | '''{{flag|North Carolina}}''' || 601,788
 |-
-| 33 || align="left" | {{flag|Taiwan Province of China}} || 586,104
+| 33 || align="left" | {{flag|Taiwan}} || 586,104
 |-
-| 34 || align="left" style = "background: #D3D3D3; "| {{flag|Virginia}} || 566,529
+| 34 || align="left" | '''{{flag|Virginia}}''' || 566,529
 |-
 | 35 || align="left" | {{flag|Poland}} || 565,854
 |-
-| 36 || align="left" style = "background: #D3D3D3; "| {{flag|Michigan}} || 543,489
+| 36 || align="left" | '''{{flag|Michigan}}''' || 543,489
 |-
 | 37 || align="left" | {{flag|Thailand}} || 529,177
 |-
@@ -80,7 +80,7 @@
 |-
 | 39 || align="left" | {{flag|Belgium}} || 517,609
 |-
-| 40 || align="left" | {{flag|Islamic Republic of Iran}} || 458,500
+| 40 || align="left" | {{flag|Iran}} || 458,500
 |-
 | 41 || align="left" | {{flag|Austria}} || 447,718
 |-
@@ -88,27 +88,27 @@
 |-
 | 43 || align="left" | {{flag|Argentina}} || 445,469
 |-
-| 44 || align="left" style = "background: #D3D3D3; "| {{flag|Maryland}} || 432,998
+| 44 || align="left" | '''{{flag|Maryland}}''' || 432,998
 |-
 | 45 || align="left" | {{flag|Norway}} || 417,627
 |-
 | 46 || align="left" | {{flag|United Arab Emirates}} || 405,771
 |-
-| 47 || align="left" style = "background: #D3D3D3; "| {{flag|Colorado}} || 400,863
+| 47 || align="left" | '''{{flag|Colorado}}''' || 400,863
 |-
-| 48 || align="left" style = "background: #D3D3D3; "| {{flag|Minnesota}} || 389,504
+| 48 || align="left" | '''{{flag|Minnesota}}''' || 389,504
 |-
 | 49 || align="left" | {{flag|Israel}} || 387,717
 |-
 | 50 || align="left" | {{flag|Ireland}} || 384,940
 |-
-| 51 || align="left" style = "background: #D3D3D3; "| {{flag|Indiana}} || 384,872
+| 51 || align="left" | '''{{flag|Indiana}}''' || 384,872
 |-
-| 52 || align="left" style = "background: #D3D3D3; "| {{flag|Tennessee}} || 380,823
+| 52 || align="left" | '''{{flag|Tennessee}}''' || 380,823
 |-
-| 53 || align="left" style = "background: #D3D3D3; "| {{flag|Arizona}} || 379,019
+| 53 || align="left" | '''{{flag|Arizona}}''' || 379,019
 |-
-| 54 || align="left" | {{flag|Hong Kong SAR}} || 372,989
+| 54 || align="left" | {{flag|''Hong Kong (China)''}} || 372,989
 |-
 | 55 || align="left" | {{flag|Malaysia}} || 365,303
 |-
@@ -118,11 +118,11 @@
 |-
 | 58 || align="left" | {{flag|Philippines}} || 356,814
 |-
-| 59 || align="left" style = "background: #D3D3D3; "| {{flag|Wisconsin}} || 353,935
+| 59 || align="left" | '''{{flag|Wisconsin}}''' || 353,935
 |-
 | 60 || align="left" | {{flag|Denmark}} || 347,176
 |-
-| 61 || align="left" style = "background: #D3D3D3; "| {{flag|Missouri}} || 332,660
+| 61 || align="left" | '''{{flag|Missouri}}''' || 332,660
 |-
 | 62 || align="left" | {{flag|Colombia}} || 327,895
 |-
@@ -132,7 +132,7 @@
 |-
 | 65 || align="left" | {{flag|Chile}} || 294,237
 |-
-| 66 || align="left" style = "background: #D3D3D3; "| {{flag|Connecticut}} || 290,703
+| 66 || align="left" | '''{{flag|Connecticut}}''' || 290,703
 |-
 | 67 || align="left" | {{flag|Pakistan}} || 284,214
 |-
@@ -140,11 +140,11 @@
 |-
 | 69 || align="left" | {{flag|Vietnam}} || 261,637
 |-
-| 70 || align="left" style = "background: #D3D3D3; "| {{flag|Louisiana}} || 259,079
+| 70 || align="left" | '''{{flag|Louisiana}}''' || 259,079
 |-
-| 71 || align="left" style = "background: #D3D3D3; "| {{flag|Oregon}} || 258,693
+| 71 || align="left" | '''{{flag|Oregon}}''' || 258,693
 |-
-| 72 || align="left" style = "background: #D3D3D3; "| {{flag|South Carolina}} || 251,665
+| 72 || align="left" | '''{{flag|South Carolina}}''' || 251,665
 |-
 | 73 || align="left" | {{flag|Czech Republic}} || 246,953
 |-
@@ -152,29 +152,29 @@
 |-
 | 75 || align="left" | {{flag|Portugal}} || 236,408
 |-
-| 76 || align="left" style = "background: #D3D3D3; "| {{flag|Alabama}} || 230,750
+| 76 || align="left" | '''{{flag|Alabama}}''' || 230,750
 |-
 | 77 || align="left" | {{flag|Peru}} || 228,989
 |-
 | 78 || align="left" | {{flag|Iraq}} || 224,462
 |-
-| 79 || align="left" style = "background: #D3D3D3; "| {{flag|Kentucky}} || 218,426
+| 79 || align="left" | '''{{flag|Kentucky}}''' || 218,426
 |-
 | 80 || align="left" | {{flag|Greece}} || 214,012
 |-
 | 81 || align="left" | {{flag|New Zealand}} || 204,671
 |-
-| 82 || align="left" style = "background: #D3D3D3; "| {{flag|Oklahoma}} || 201,604
+| 82 || align="left" | '''{{flag|Oklahoma}}''' || 201,604
 |-
-| 83 || align="left" style = "background: #D3D3D3; "| {{flag|Utah}} || 196,639
+| 83 || align="left" | '''{{flag|Utah}}''' || 196,639
 |-
-| 84 || align="left" style = "background: #D3D3D3; "| {{flag|Iowa}} || 196,247
+| 84 || align="left" | '''{{flag|Iowa}}''' || 196,247
 |-
 | 85 || align="left" | {{flag|Qatar}} || 191,849
 |-
-| 86 || align="left" style = "background: #D3D3D3; "| {{flag|Nevada}} || 181,752
+| 86 || align="left" | '''{{flag|Nevada}}''' || 181,752
 |-
-| 87 || align="left" style = "background: #D3D3D3; "| {{flag|Kansas}} || 178,605
+| 87 || align="left" | '''{{flag|Kansas}}''' || 178,605
 |-
 | 88 || align="left" | {{flag|Algeria}} || 172,781
 |-
@@ -184,29 +184,29 @@
 |-
 | 91 || align="left" | {{flag|Ukraine}} || 150,401
 |-
-| 92 || align="left" style = "background: #D3D3D3; "| {{flag|District of Columbia}} || 145,278
+| 92 || align="left" | '''{{flag|District of Columbia}}''' || 145,278
 |-
 | 93 || align="left" | {{flag|Kuwait}} || 137,591
 |-
-| 94 || align="left" style = "background: #D3D3D3; "| {{flag|Nebraska}} || 133,201
+| 94 || align="left" | '''{{flag|Nebraska}}''' || 133,201
 |-
-| 95 || align="left" style = "background: #D3D3D3; "| {{flag|Arkansas}} || 132,596
+| 95 || align="left" | '''{{flag|Arkansas}}''' || 132,596
 |-
 | 96 || align="left" | {{flag|Morocco}} || 119,040
 |-
-| 97 || align="left" style = "background: #D3D3D3; "| {{flag|Mississippi}} || 117,642
+| 97 || align="left" | '''{{flag|Mississippi}}''' || 117,642
 |-
 | 98 || align="left" | {{flag|Ecuador}} || 107,914
 |-
-| 99 || align="left" style = "background: #D3D3D3; "| {{flag|New Mexico}} || 106,914
+| 99 || align="left" | '''{{flag|New Mexico}}''' || 106,914
 |-
-| 100 || align="left" | {{flag|Slovak Republic}} || 106,552
+| 100 || align="left" | {{flag|Slovakia}} || 106,552
 |-
-| 101 || align="left" | {{flag|Puerto Rico}} || 99,913
+| 101 || align="left" | {{flag|''Puerto Rico (United States)''}} || 99,913
 |-
 | 102 || align="left" | {{flag|Kenya}} || 98,607
 |-
-| 103 || align="left" style = "background: #D3D3D3; "| {{flag|Hawaii}} || 97,001
+| 103 || align="left" | '''{{flag|Hawaii}}''' || 97,001
 |-
 | 104 || align="left" | {{flag|Angola}} || 91,527
 |-
@@ -214,17 +214,17 @@
 |-
 | 106 || align="left" | {{flag|Dominican Republic}} || 89,475
 |-
-| 107 || align="left" style = "background: #D3D3D3; "| {{flag|New Hampshire}} || 88,015
+| 107 || align="left" | '''{{flag|New Hampshire}}''' || 88,015
 |-
 | 108 || align="left" | {{flag|Sri Lanka}} || 86,566
 |-
-| 109 || align="left" style = "background: #D3D3D3; "| {{flag|Idaho}} || 85,791
+| 109 || align="left" | '''{{flag|Idaho}}''' || 85,791
 |-
 | 110 || align="left" | {{flag|Guatemala}} || 81,318
 |-
-| 111 || align="left" style = "background: #D3D3D3; "| {{flag|West Virginia}} || 78,480
+| 111 || align="left" | '''{{flag|West Virginia}}''' || 78,480
 |-
-| 112 || align="left" style = "background: #D3D3D3; "| {{flag|Delaware}} || 77,879
+| 112 || align="left" | '''{{flag|Delaware}}''' || 77,879
 |-
 | 113 || align="left" | {{flag|Oman}} || 76,609
 |-
@@ -232,7 +232,7 @@
 |-
 | 115 || align="left" | {{flag|Luxembourg}} || 69,453
 |-
-| 116 || align="left" style = "background: #D3D3D3; "| {{flag|Maine}} || 68,985
+| 116 || align="left" | '''{{flag|Maine}}''' || 68,985
 |-
 | 117 || align="left" | {{flag|Panama}} || 68,536
 |-
@@ -244,7 +244,7 @@
 |-
 | 121 || align="left" | {{flag|Belarus}} || 62,572
 |-
-| 122 || align="left" style = "background: #D3D3D3; "| {{flag|Rhode Island}} || 62,335
+| 122 || align="left" | '''{{flag|Rhode Island}}''' || 62,335
 |-
 | 123 || align="left" | {{flag|Tanzania}} || 62,224
 |-
@@ -260,17 +260,17 @@
 |-
 | 129 || align="left" | {{flag|Lebanon}} || 58,565
 |-
-| 130 || align="left" style = "background: #D3D3D3; "| {{flag|North Dakota}} || 57,472
+| 130 || align="left" | '''{{flag|North Dakota}}''' || 57,472
 |-
-| 131 || align="left" style = "background: #D3D3D3; "| {{flag|South Dakota}} || 56,052
+| 131 || align="left" | '''{{flag|South Dakota}}''' || 56,052
 |-
-| 132 || align="left" | {{flag|Macao SAR}} || 55,136
+| 132 || align="left" | {{flag|''Macau (China)''}} || 55,136
 |-
-| 133 || align="left" style = "background: #D3D3D3; "| {{flag|Alaska}} || 54,675
+| 133 || align="left" | '''{{flag|Alaska}}''' || 54,675
 |-
 | 134 || align="left" | {{flag|Slovenia}} || 54,154
 |-
-| 135 || align="left" style = "background: #D3D3D3; "| {{flag|Montana}} || 54,035
+| 135 || align="left" | '''{{flag|Montana}}''' || 54,035
 |-
 | 136 || align="left" | {{flag|Lithuania}} || 53,641
 |-
@@ -288,7 +288,7 @@
 |-
 | 143 || align="left" | {{flag|Bolivia}} || 42,401
 |-
-| 144 || align="left" style = "background: #D3D3D3; "| {{flag|Wyoming}} || 40,764
+| 144 || align="left" | '''{{flag|Wyoming}}''' || 40,764
 |-
 | 145 || align="left" | {{flag|Paraguay}} || 40,714
 |-
@@ -300,7 +300,7 @@
 |-
 | 149 || align="left" | {{flag|Latvia}} || 35,045
 |-
-| 150 || align="left" style = "background: #D3D3D3; "| {{flag|Vermont}} || 34,320
+| 150 || align="left" | '''{{flag|Vermont}}''' || 34,320
 |-
 | 151 || align="left" | {{flag|Libya}} || 33,018
 |-
@@ -334,7 +334,7 @@
 |-
 | 166 || align="left" | {{flag|Bosnia and Herzegovina}} || 20,106
 |-
-| 167 || align="left" | {{flag|Lao P.D.R.}} || 19,127
+| 167 || align="left" | {{flag|Laos}} || 19,127
 |-
 | 168 || align="left" | {{flag|Afghanistan}} || 18,734
 |-
@@ -378,7 +378,7 @@
 |-
 | 188 || align="left" | {{flag|Nicaragua}} || 12,528
 |-
-| 189 || align="left" | {{flag|Brunei Darussalam}} || 12,455
+| 189 || align="left" | {{flag|Brunei}} || 12,455
 |-
 | 190 || align="left" | {{flag|Equatorial Guinea}} || 12,142
 |-
@@ -394,7 +394,7 @@
 |-
 | 196 || align="left" | {{flag|Haiti}} || 8,819
 |-
-| 197 || align="left" | {{flag|Kyrgyz Republic}} || 8,261
+| 197 || align="left" | {{flag|Kyrgyzstan}} || 8,261
 |-
 | 198 || align="left" | {{flag|Tajikistan}} || 8,151
 |-
