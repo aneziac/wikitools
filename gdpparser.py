@@ -1,16 +1,21 @@
 import pandas as pd
 from weo import download
 from weo import WEO
+import datetime
+# import datapungibea
 
 
-def get_state_data(quarter, year, download_new=False):
+def get_state_data(year, download_new=False):
 
     # read sheet
     states = pd.read_excel('data/gdp/BEA_2019-2020.xlsx', sheet_name='Table 3')
 
     # get data from specified quarter and year
-    # calculate later
-    col = 4
+    data_years = list(states.iloc[2])
+    if data_years.index(int(year)) == 1:
+        col = 4
+    else:
+        col = 4 + ((len(data_years) - 9) / 2)
 
     states = states.iloc[5:64, [0, col]]
 
@@ -30,12 +35,13 @@ def get_state_data(quarter, year, download_new=False):
 
 def get_country_data(year, download_new=False):
     if download_new:
-        download('2019-Oct', path='weo.csv', overwrite=True)
+        if year == '2020':
+            raise ValueError('2020 data is not yet supported by the WEO package')
+        download(year + '-Oct', path='weo.csv', overwrite=True)
 
     # read sheet
     w = WEO('weo.csv')
     countries = w.df
-    # countries = weo.weo.read_csv('WEOOct2020all.xls')
 
     # grab the right data
     countries = countries[countries['Subject Descriptor'] == 'Gross domestic product, current prices']
@@ -44,12 +50,13 @@ def get_country_data(year, download_new=False):
 
     # rename columns
     countries.columns = ['Country', 'GDP']
-    
+
     # clean up data
     countries['GDP'] = countries['GDP'].str.replace(',','')
     countries.loc[countries['Country'] == 'Syria', 'GDP'] = '60.043'
     countries['GDP'] = countries['GDP'].astype(float)
     countries['GDP'] *= 1000
+    world_gdp = int(countries['GDP'].sum())
     countries['State?'] = False
 
     # rename countries
@@ -67,7 +74,7 @@ def get_country_data(year, download_new=False):
     for item in replacements:
         countries = countries.replace(item, replacements[item])
 
-    return countries
+    return countries, world_gdp
 
 def combine_data(sheet1, sheet2):
     def add_note(country, note):
@@ -87,7 +94,7 @@ def combine_data(sheet1, sheet2):
 
     return data
 
-def write_wikitable(year, data):
+def write_wikitable(year, data, world_gdp):
 
     # open file to write
     out = open('out/countrystate.txt', 'w')
@@ -95,13 +102,16 @@ def write_wikitable(year, data):
     # create sortable centered wikitable with titles
     out.write('{| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"')
     out.write('\n|+ National GDPs and U.S. State GDPs, ' + year)
-    out.write('\n! Rank !! Country or U.S. State !! GDP (USD million)\n')
+    out.write('<ref>{{cite web |title = World Economic Outlook Database |url=https://www.imf.org/en/Publications/WEO/weo-database/' + year + '/October |access-date=' + str(datetime.date.today()) + '}}</ref>')
+    out.write('\n! # !! Country or U.S. State !! GDP ([[USD]] million)\n')
+    out.write('|- style="font-weight:bold; background: #eaecf0"\n')
+    out.write("|   || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}\n')
 
     # read data, add to file, and close file
     for row in range(len(data)):
         flag = '{{flag|' + data.iloc[row, 0] + '}}'
 
-        # bold US states
+        # add country descriptors for territories and bold US states
         if data.iloc[row, 0] in ['Puerto Rico', 'District of Columbia', 'Hong Kong', 'Macau']:
             flag = "''" + flag + (' (China)' if data.iloc[row, 0] in ['Hong Kong', 'Macau'] else ' (United States)') + "''"
         elif data.iloc[row, 2]:
@@ -112,17 +122,16 @@ def write_wikitable(year, data):
             out.write('{{refn|' + data.iloc[row, 3] + '}}')
         out.write(' || ' + f'{int(data.iloc[row, 1]):,}\n')
 
-    out.write('|}')
+    out.write('|}\n')
     out.close()
 
 def main():
-    year = '2019'
-    quarter = '2'
+    year = '2020'
 
-    states = get_state_data(quarter, year)
-    countries = get_country_data(year)
+    states = get_state_data(year)
+    countries, world_gdp = get_country_data(year)
     data = combine_data(states, countries)
-    write_wikitable(year, data)
+    write_wikitable(year, data, world_gdp)
 
 
 main()
