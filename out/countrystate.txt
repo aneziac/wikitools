@@ -1,496 +1,496 @@
 {| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"
-|+ National GDPs and U.S. State GDPs, 2020<ref>{{cite web |title = World Economic Outlook Database |url=https://www.imf.org/en/Publications/WEO/weo-database/2020/October |access-date=2020-12-28}}</ref>
+|+ National GDPs and U.S. State GDPs, 2019<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/2019/October|access-date=2020-12-30}}</ref>
 ! # !! Country or U.S. State !! GDP ([[USD]] million)
-|- style="font-weight:bold; background:#eaecf0" data-sort-value="-1"
-|   || align="left" | {{noflag}} ''[[Gross world product|World]]'' || 90,319,737
+|- style="font-weight:bold; background: #eaecf0"
+|   || align="left" | {{noflag}} ''[[Gross world product|World]]'' || 86,658,869
 |-
-| 1 || align="left" | {{flag|United States}} || 22,321,762
+| 1 || align="left" | {{flag|United States}} || 21,439,453
 |-
-| 2 || align="left" | {{flag|China}}{{refn|Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.}} || 15,269,942
+| 2 || align="left" | {{flag|China}}{{refn|Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.}} || 14,140,163
 |-
-| 3 || align="left" | {{flag|Japan}} || 5,413,054
+| 3 || align="left" | {{flag|Japan}} || 5,154,475
 |-
-| 4 || align="left" | {{flag|Germany}} || 3,982,235
+| 4 || align="left" | {{flag|Germany}} || 3,863,344
 |-
-| 5 || align="left" | {{flag|India}} || 3,202,183
+| 5 || align="left" | '''{{flag|California}}''' || 3,205,000
 |-
-| 6 || align="left" | '''{{flag|California}}''' || 3,120,386
+| 6 || align="left" | {{flag|India}} || 2,935,570
 |-
-| 7 || align="left" | {{flag|France}} || 2,771,622
+| 7 || align="left" | {{flag|United Kingdom}} || 2,743,586
 |-
-| 8 || align="left" | {{flag|United Kingdom}} || 2,716,534
+| 8 || align="left" | {{flag|France}} || 2,707,074
 |-
-| 9 || align="left" | {{flag|Italy}} || 2,013,670
+| 9 || align="left" | {{flag|Italy}} || 1,988,636
 |-
-| 10 || align="left" | {{flag|Brazil}} || 1,893,010
+| 10 || align="left" | '''{{flag|Texas}}''' || 1,861,582
 |-
-| 11 || align="left" | {{flag|Canada}} || 1,812,460
+| 11 || align="left" | {{flag|Brazil}} || 1,847,020
 |-
-| 12 || align="left" | '''{{flag|Texas}}''' || 1,772,132
+| 12 || align="left" | '''{{flag|New York}}''' || 1,791,567
 |-
-| 13 || align="left" | '''{{flag|New York}}''' || 1,705,127
+| 13 || align="left" | {{flag|Canada}} || 1,730,914
 |-
-| 14 || align="left" | {{flag|Russia}}{{refn|Figures exclude Republic of Crimea and Sevastopol.}} || 1,657,539
+| 14 || align="left" | {{flag|Russia}}{{refn|Figures exclude Republic of Crimea and Sevastopol.}} || 1,637,892
 |-
-| 15 || align="left" | {{flag|South Korea}} || 1,626,553
+| 15 || align="left" | {{flag|South Korea}} || 1,629,532
 |-
-| 16 || align="left" | {{flag|Spain}} || 1,440,399
+| 16 || align="left" | {{flag|Spain}} || 1,397,870
 |-
-| 17 || align="left" | {{flag|Australia}} || 1,375,448
+| 17 || align="left" | {{flag|Australia}} || 1,376,255
 |-
-| 18 || align="left" | {{flag|Mexico}} || 1,322,489
+| 18 || align="left" | {{flag|Mexico}} || 1,274,175
 |-
-| 19 || align="left" | {{flag|Indonesia}} || 1,204,830
+| 19 || align="left" | '''{{flag|Florida}}''' || 1,126,510
 |-
-| 20 || align="left" | '''{{flag|Florida}}''' || 1,111,614
+| 20 || align="left" | {{flag|Indonesia}} || 1,111,713
 |-
-| 21 || align="left" | {{flag|Netherlands}} || 930,990
+| 21 || align="left" | {{flag|Netherlands}} || 902,355
 |-
-| 22 || align="left" | '''{{flag|Illinois}}''' || 875,671
+| 22 || align="left" | '''{{flag|Illinois}}''' || 893,356
 |-
-| 23 || align="left" | {{flag|Turkey}} || 813,810
+| 23 || align="left" | '''{{flag|Pennsylvania}}''' || 818,449
 |-
-| 24 || align="left" | '''{{flag|Pennsylvania}}''' || 788,500
+| 24 || align="left" | {{flag|Saudi Arabia}} || 779,289
 |-
-| 25 || align="left" | {{flag|Saudi Arabia}} || 783,337
+| 25 || align="left" | {{flag|Turkey}} || 743,708
 |-
-| 26 || align="left" | {{flag|Switzerland}} || 749,424
+| 26 || align="left" | {{flag|Switzerland}} || 715,360
 |-
-| 27 || align="left" | '''{{flag|Ohio}}''' || 683,460
+| 27 || align="left" | '''{{flag|Ohio}}''' || 703,369
 |-
-| 28 || align="left" | '''{{flag|Washington}}''' || 632,013
+| 28 || align="left" | '''{{flag|New Jersey}}''' || 642,968
 |-
-| 29 || align="left" | '''{{flag|Georgia (U.S. state)|name=Georgia}}''' || 627,667
+| 29 || align="left" | '''{{flag|Georgia (U.S. state)|name=Georgia}}''' || 634,138
 |-
-| 30 || align="left" | '''{{flag|New Jersey}}''' || 625,659
+| 30 || align="left" | '''{{flag|Washington}}''' || 624,861
 |-
-| 31 || align="left" | {{flag|Poland}} || 606,730
+| 31 || align="left" | '''{{flag|Massachusetts}}''' || 603,210
 |-
-| 32 || align="left" | {{flag|Taiwan}} || 603,031
+| 32 || align="left" | '''{{flag|North Carolina}}''' || 601,788
 |-
-| 33 || align="left" | '''{{flag|North Carolina}}''' || 594,126
+| 33 || align="left" | {{flag|Taiwan}} || 586,104
 |-
-| 34 || align="left" | '''{{flag|Massachusetts}}''' || 590,307
+| 34 || align="left" | '''{{flag|Virginia}}''' || 566,529
 |-
-| 35 || align="left" | '''{{flag|Virginia}}''' || 557,986
+| 35 || align="left" | {{flag|Poland}} || 565,854
 |-
-| 36 || align="left" | {{flag|Thailand}} || 557,309
+| 36 || align="left" | '''{{flag|Michigan}}''' || 543,489
 |-
-| 37 || align="left" | {{flag|Sweden}} || 540,785
+| 37 || align="left" | {{flag|Thailand}} || 529,177
 |-
-| 38 || align="left" | {{flag|Belgium}} || 529,554
+| 38 || align="left" | {{flag|Sweden}} || 528,929
 |-
-| 39 || align="left" | '''{{flag|Michigan}}''' || 524,828
+| 39 || align="left" | {{flag|Belgium}} || 517,609
 |-
-| 40 || align="left" | {{flag|Nigeria}} || 494,830
+| 40 || align="left" | {{flag|Iran}} || 458,500
 |-
-| 41 || align="left" | {{flag|Iran}} || 463,077
+| 41 || align="left" | {{flag|Austria}} || 447,718
 |-
-| 42 || align="left" | {{flag|Austria}} || 462,572
+| 42 || align="left" | {{flag|Nigeria}} || 446,543
 |-
-| 43 || align="left" | {{flag|Argentina}} || 443,249
+| 43 || align="left" | {{flag|Argentina}} || 445,469
 |-
-| 44 || align="left" | '''{{flag|Maryland}}''' || 427,616
+| 44 || align="left" | '''{{flag|Maryland}}''' || 432,998
 |-
-| 45 || align="left" | {{flag|Norway}} || 422,060
+| 45 || align="left" | {{flag|Norway}} || 417,627
 |-
-| 46 || align="left" | {{flag|United Arab Emirates}} || 414,020
+| 46 || align="left" | {{flag|United Arab Emirates}} || 405,771
 |-
-| 47 || align="left" | {{flag|Israel}} || 410,501
+| 47 || align="left" | '''{{flag|Colorado}}''' || 400,863
 |-
-| 48 || align="left" | {{flag|Ireland}} || 402,050
+| 48 || align="left" | '''{{flag|Minnesota}}''' || 389,504
 |-
-| 49 || align="left" | '''{{flag|Colorado}}''' || 394,271
+| 49 || align="left" | {{flag|Israel}} || 387,717
 |-
-| 50 || align="left" | ''{{flag|Hong Kong}} (China)'' || 385,274
+| 50 || align="left" | {{flag|Ireland}} || 384,940
 |-
-| 51 || align="left" | {{flag|Philippines}} || 383,482
+| 51 || align="left" | '''{{flag|Indiana}}''' || 384,872
 |-
-| 52 || align="left" | {{flag|Malaysia}} || 381,523
+| 52 || align="left" | '''{{flag|Tennessee}}''' || 380,823
 |-
-| 53 || align="left" | '''{{flag|Minnesota}}''' || 379,388
+| 53 || align="left" | '''{{flag|Arizona}}''' || 379,019
 |-
-| 54 || align="left" | '''{{flag|Indiana}}''' || 379,293
+| 54 || align="left" | ''{{flag|Hong Kong}} (China)'' || 372,989
 |-
-| 55 || align="left" | '''{{flag|Arizona}}''' || 378,297
+| 55 || align="left" | {{flag|Malaysia}} || 365,303
 |-
-| 56 || align="left" | {{flag|South Africa}} || 369,854
+| 56 || align="left" | {{flag|Singapore}} || 362,818
 |-
-| 57 || align="left" | {{flag|Singapore}} || 369,627
+| 57 || align="left" | {{flag|South Africa}} || 358,839
 |-
-| 58 || align="left" | '''{{flag|Tennessee}}''' || 369,063
+| 58 || align="left" | {{flag|Philippines}} || 356,814
 |-
-| 59 || align="left" | {{flag|Denmark}} || 360,506
+| 59 || align="left" | '''{{flag|Wisconsin}}''' || 353,935
 |-
-| 60 || align="left" | {{flag|Egypt}} || 353,003
+| 60 || align="left" | {{flag|Denmark}} || 347,176
 |-
-| 61 || align="left" | {{flag|Bangladesh}} || 347,991
+| 61 || align="left" | '''{{flag|Missouri}}''' || 332,660
 |-
-| 62 || align="left" | '''{{flag|Wisconsin}}''' || 344,500
+| 62 || align="left" | {{flag|Colombia}} || 327,895
 |-
-| 63 || align="left" | {{flag|Colombia}} || 343,177
+| 63 || align="left" | {{flag|Bangladesh}} || 317,465
 |-
-| 64 || align="left" | '''{{flag|Missouri}}''' || 325,841
+| 64 || align="left" | {{flag|Egypt}} || 302,256
 |-
-| 65 || align="left" | {{flag|Chile}} || 308,505
+| 65 || align="left" | {{flag|Chile}} || 294,237
 |-
-| 66 || align="left" | {{flag|Vietnam}} || 284,847
+| 66 || align="left" | '''{{flag|Connecticut}}''' || 290,703
 |-
-| 67 || align="left" | '''{{flag|Connecticut}}''' || 283,601
+| 67 || align="left" | {{flag|Pakistan}} || 284,214
 |-
-| 68 || align="left" | {{flag|Finland}} || 280,709
+| 68 || align="left" | {{flag|Finland}} || 269,654
 |-
-| 69 || align="left" | {{flag|Romania}} || 261,868
+| 69 || align="left" | {{flag|Vietnam}} || 261,637
 |-
-| 70 || align="left" | {{flag|Czech Republic}} || 261,732
+| 70 || align="left" | '''{{flag|Louisiana}}''' || 259,079
 |-
-| 71 || align="left" | '''{{flag|Oregon}}''' || 253,849
+| 71 || align="left" | '''{{flag|Oregon}}''' || 258,693
 |-
-| 72 || align="left" | '''{{flag|South Carolina}}''' || 245,473
+| 72 || align="left" | '''{{flag|South Carolina}}''' || 251,665
 |-
-| 73 || align="left" | '''{{flag|Louisiana}}''' || 244,577
+| 73 || align="left" | {{flag|Czech Republic}} || 246,953
 |-
-| 74 || align="left" | {{flag|Portugal}} || 243,229
+| 74 || align="left" | {{flag|Romania}} || 243,698
 |-
-| 75 || align="left" | {{flag|Peru}} || 240,175
+| 75 || align="left" | {{flag|Portugal}} || 236,408
 |-
-| 76 || align="left" | {{flag|Iraq}} || 232,745
+| 76 || align="left" | '''{{flag|Alabama}}''' || 230,750
 |-
-| 77 || align="left" | '''{{flag|Alabama}}''' || 228,062
+| 77 || align="left" | {{flag|Peru}} || 228,989
 |-
-| 78 || align="left" | {{flag|Greece}} || 222,785
+| 78 || align="left" | {{flag|Iraq}} || 224,462
 |-
-| 79 || align="left" | {{flag|New Zealand}} || 216,199
+| 79 || align="left" | '''{{flag|Kentucky}}''' || 218,426
 |-
-| 80 || align="left" | '''{{flag|Kentucky}}''' || 213,169
+| 80 || align="left" | {{flag|Greece}} || 214,012
 |-
-| 81 || align="left" | '''{{flag|Utah}}''' || 198,630
+| 81 || align="left" | {{flag|New Zealand}} || 204,671
 |-
-| 82 || align="left" | '''{{flag|Iowa}}''' || 195,353
+| 82 || align="left" | '''{{flag|Oklahoma}}''' || 201,604
 |-
-| 83 || align="left" | {{flag|Qatar}} || 195,225
+| 83 || align="left" | '''{{flag|Utah}}''' || 196,639
 |-
-| 84 || align="left" | '''{{flag|Oklahoma}}''' || 186,883
+| 84 || align="left" | '''{{flag|Iowa}}''' || 196,247
 |-
-| 85 || align="left" | {{flag|Kazakhstan}} || 182,623
+| 85 || align="left" | {{flag|Qatar}} || 191,849
 |-
-| 86 || align="left" | {{flag|Hungary}} || 180,498
+| 86 || align="left" | '''{{flag|Nevada}}''' || 181,752
 |-
-| 87 || align="left" | {{flag|Algeria}} || 178,637
+| 87 || align="left" | '''{{flag|Kansas}}''' || 178,605
 |-
-| 88 || align="left" | '''{{flag|Nevada}}''' || 175,509
+| 88 || align="left" | {{flag|Algeria}} || 172,781
 |-
-| 89 || align="left" | '''{{flag|Kansas}}''' || 175,465
+| 89 || align="left" | {{flag|Hungary}} || 170,407
 |-
-| 90 || align="left" | {{flag|Ukraine}} || 161,872
+| 90 || align="left" | {{flag|Kazakhstan}} || 170,326
 |-
-| 91 || align="left" | ''{{flag|District of Columbia}} (United States)'' || 144,653
+| 91 || align="left" | {{flag|Ukraine}} || 150,401
 |-
-| 92 || align="left" | {{flag|Kuwait}} || 139,570
+| 92 || align="left" | ''{{flag|District of Columbia}} (United States)'' || 145,278
 |-
-| 93 || align="left" | '''{{flag|Arkansas}}''' || 130,709
+| 93 || align="left" | {{flag|Kuwait}} || 137,591
 |-
-| 94 || align="left" | '''{{flag|Nebraska}}''' || 129,761
+| 94 || align="left" | '''{{flag|Nebraska}}''' || 133,201
 |-
-| 95 || align="left" | {{flag|Morocco}} || 124,539
+| 95 || align="left" | '''{{flag|Arkansas}}''' || 132,596
 |-
-| 96 || align="left" | '''{{flag|Mississippi}}''' || 115,900
+| 96 || align="left" | {{flag|Morocco}} || 119,040
 |-
-| 97 || align="left" | {{flag|Slovakia}} || 111,874
+| 97 || align="left" | '''{{flag|Mississippi}}''' || 117,642
 |-
-| 98 || align="left" | {{flag|Ecuador}} || 109,444
+| 98 || align="left" | {{flag|Ecuador}} || 107,914
 |-
-| 99 || align="left" | {{flag|Kenya}} || 109,128
+| 99 || align="left" | '''{{flag|New Mexico}}''' || 106,914
 |-
-| 100 || align="left" | {{flag|Ethiopia}} || 103,607
+| 100 || align="left" | {{flag|Slovakia}} || 106,552
 |-
-| 101 || align="left" | '''{{flag|New Mexico}}''' || 100,777
+| 101 || align="left" | ''{{flag|Puerto Rico}} (United States)'' || 99,913
 |-
-| 102 || align="left" | ''{{flag|Puerto Rico}} (United States)'' || 100,169
+| 102 || align="left" | {{flag|Kenya}} || 98,607
 |-
-| 103 || align="left" | {{flag|Dominican Republic}} || 96,291
+| 103 || align="left" | '''{{flag|Hawaii}}''' || 97,001
 |-
-| 104 || align="left" | {{flag|Sri Lanka}} || 92,111
+| 104 || align="left" | {{flag|Angola}} || 91,527
 |-
-| 105 || align="left" | '''{{flag|Hawaii}}''' || 89,866
+| 105 || align="left" | {{flag|Ethiopia}} || 91,166
 |-
-| 106 || align="left" | {{flag|Angola}} || 88,983
+| 106 || align="left" | {{flag|Dominican Republic}} || 89,475
 |-
-| 107 || align="left" | {{flag|Guatemala}} || 86,397
+| 107 || align="left" | '''{{flag|New Hampshire}}''' || 88,015
 |-
-| 108 || align="left" | '''{{flag|New Hampshire}}''' || 86,319
+| 108 || align="left" | {{flag|Sri Lanka}} || 86,566
 |-
-| 109 || align="left" | '''{{flag|Idaho}}''' || 85,552
+| 109 || align="left" | '''{{flag|Idaho}}''' || 85,791
 |-
-| 110 || align="left" | {{flag|Oman}} || 78,657
+| 110 || align="left" | {{flag|Guatemala}} || 81,318
 |-
-| 111 || align="left" | '''{{flag|Delaware}}''' || 76,468
+| 111 || align="left" | '''{{flag|West Virginia}}''' || 78,480
 |-
-| 112 || align="left" | '''{{flag|West Virginia}}''' || 74,511
+| 112 || align="left" | '''{{flag|Delaware}}''' || 77,879
 |-
-| 113 || align="left" | {{flag|Panama}} || 73,369
+| 113 || align="left" | {{flag|Oman}} || 76,609
 |-
-| 114 || align="left" | {{flag|Luxembourg}} || 72,994
+| 114 || align="left" | {{flag|Venezuela}} || 70,140
 |-
-| 115 || align="left" | {{flag|Myanmar}} || 72,105
+| 115 || align="left" | {{flag|Luxembourg}} || 69,453
 |-
-| 116 || align="left" | {{flag|Uzbekistan}} || 70,156
+| 116 || align="left" | '''{{flag|Maine}}''' || 68,985
 |-
-| 117 || align="left" | {{flag|Bulgaria}} || 70,126
+| 117 || align="left" | {{flag|Panama}} || 68,536
 |-
-| 118 || align="left" | {{flag|Ghana}} || 69,757
+| 118 || align="left" | {{flag|Ghana}} || 67,077
 |-
-| 119 || align="left" | {{flag|Tanzania}} || 67,241
+| 119 || align="left" | {{flag|Bulgaria}} || 66,250
 |-
-| 120 || align="left" | '''{{flag|Maine}}''' || 67,129
+| 120 || align="left" | {{flag|Myanmar}} || 65,994
 |-
-| 121 || align="left" | {{flag|Costa Rica}} || 65,179
+| 121 || align="left" | {{flag|Belarus}} || 62,572
 |-
-| 122 || align="left" | {{flag|Belarus}} || 63,582
+| 122 || align="left" | '''{{flag|Rhode Island}}''' || 62,335
 |-
-| 123 || align="left" | {{flag|Croatia}} || 63,172
+| 123 || align="left" | {{flag|Tanzania}} || 62,224
 |-
-| 124 || align="left" | {{flag|Venezuela}} || 62,921
+| 124 || align="left" | {{flag|Costa Rica}} || 61,021
 |-
-| 125 || align="left" | {{flag|Uruguay}} || 62,917
+| 125 || align="left" | {{flag|Croatia}} || 60,702
 |-
-| 126 || align="left" | '''{{flag|Rhode Island}}''' || 61,081
+| 126 || align="left" | {{flag|Uzbekistan}} || 60,490
 |-
-| 127 || align="left" | {{flag|Lebanon}} || 60,455
+| 127 || align="left" | {{flag|Syria}}{{refn|Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.}} || 60,043
 |-
-| 128 || align="left" | {{flag|Syria}}{{refn|Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.}} || 60,043
+| 128 || align="left" | {{flag|Uruguay}} || 59,918
 |-
-| 129 || align="left" | {{flag|Slovenia}} || 56,854
+| 129 || align="left" | {{flag|Lebanon}} || 58,565
 |-
-| 130 || align="left" | {{flag|Lithuania}} || 56,225
+| 130 || align="left" | '''{{flag|North Dakota}}''' || 57,472
 |-
-| 131 || align="left" | {{flag|Serbia}} || 55,437
+| 131 || align="left" | '''{{flag|South Dakota}}''' || 56,052
 |-
-| 132 || align="left" | ''{{flag|Macau}} (China)'' || 55,377
+| 132 || align="left" | ''{{flag|Macau}} (China)'' || 55,136
 |-
-| 133 || align="left" | '''{{flag|South Dakota}}''' || 55,243
+| 133 || align="left" | '''{{flag|Alaska}}''' || 54,675
 |-
-| 134 || align="left" | {{flag|Turkmenistan}} || 54,226
+| 134 || align="left" | {{flag|Slovenia}} || 54,154
 |-
-| 135 || align="left" | '''{{flag|North Dakota}}''' || 54,044
+| 135 || align="left" | '''{{flag|Montana}}''' || 54,035
 |-
-| 136 || align="left" | '''{{flag|Montana}}''' || 51,934
+| 136 || align="left" | {{flag|Lithuania}} || 53,641
 |-
-| 137 || align="left" | {{flag|Democratic Republic of the Congo}} || 51,578
+| 137 || align="left" | {{flag|Serbia}} || 51,523
 |-
-| 138 || align="left" | '''{{flag|Alaska}}''' || 50,413
+| 138 || align="left" | {{flag|Democratic Republic of the Congo}} || 48,994
 |-
-| 139 || align="left" | {{flag|Côte d'Ivoire}} || 48,354
+| 139 || align="left" | {{flag|Azerbaijan}} || 47,171
 |-
-| 140 || align="left" | {{flag|Azerbaijan}} || 48,038
+| 140 || align="left" | {{flag|Turkmenistan}} || 46,674
 |-
-| 141 || align="left" | {{flag|Jordan}} || 46,363
+| 141 || align="left" | {{flag|Côte d'Ivoire}} || 44,439
 |-
-| 142 || align="left" | {{flag|Bolivia}} || 45,253
+| 142 || align="left" | {{flag|Jordan}} || 44,172
 |-
-| 143 || align="left" | {{flag|Paraguay}} || 42,826
+| 143 || align="left" | {{flag|Bolivia}} || 42,401
 |-
-| 144 || align="left" | {{flag|Cameroon}} || 40,621
+| 144 || align="left" | '''{{flag|Wyoming}}''' || 40,764
 |-
-| 145 || align="left" | {{flag|Tunisia}} || 39,610
+| 145 || align="left" | {{flag|Paraguay}} || 40,714
 |-
-| 146 || align="left" | {{flag|Bahrain}} || 39,309
+| 146 || align="left" | {{flag|Tunisia}} || 38,732
 |-
-| 147 || align="left" | {{flag|Latvia}} || 36,771
+| 147 || align="left" | {{flag|Cameroon}} || 38,632
 |-
-| 148 || align="left" | '''{{flag|Wyoming}}''' || 36,000
+| 148 || align="left" | {{flag|Bahrain}} || 38,184
 |-
-| 149 || align="left" | {{flag|Libya}} || 34,076
+| 149 || align="left" | {{flag|Latvia}} || 35,045
 |-
-| 150 || align="left" | {{flag|Uganda}} || 33,930
+| 150 || align="left" | '''{{flag|Vermont}}''' || 34,320
 |-
-| 151 || align="left" | {{flag|Nepal}} || 33,917
+| 151 || align="left" | {{flag|Libya}} || 33,018
 |-
-| 152 || align="left" | {{flag|Sudan}} || 33,690
+| 152 || align="left" | {{flag|Estonia}} || 31,038
 |-
-| 153 || align="left" | '''{{flag|Vermont}}''' || 33,278
+| 153 || align="left" | {{flag|Sudan}} || 30,873
 |-
-| 154 || align="left" | {{flag|Estonia}} || 32,741
+| 154 || align="left" | {{flag|Uganda}} || 30,666
 |-
-| 155 || align="left" | {{flag|Cambodia}} || 28,977
+| 155 || align="left" | {{flag|Yemen}} || 29,855
 |-
-| 156 || align="left" | {{flag|El Salvador}} || 27,918
+| 156 || align="left" | {{flag|Nepal}} || 29,813
 |-
-| 157 || align="left" | {{flag|Senegal}} || 25,768
+| 157 || align="left" | {{flag|El Salvador}} || 26,871
 |-
-| 158 || align="left" | {{flag|Cyprus}} || 25,360
+| 158 || align="left" | {{flag|Cambodia}} || 26,730
 |-
-| 159 || align="left" | {{flag|Honduras}} || 25,314
+| 159 || align="left" | {{flag|Honduras}} || 24,449
 |-
-| 160 || align="left" | {{flag|Iceland}} || 24,237
+| 160 || align="left" | {{flag|Cyprus}} || 24,280
 |-
-| 161 || align="left" | {{flag|Papua New Guinea}} || 23,935
+| 161 || align="left" | {{flag|Zambia}} || 23,946
 |-
-| 162 || align="left" | {{flag|Zambia}} || 23,342
+| 162 || align="left" | {{flag|Senegal}} || 23,940
 |-
-| 163 || align="left" | {{flag|Trinidad and Tobago}} || 23,251
+| 163 || align="left" | {{flag|Iceland}} || 23,918
 |-
-| 164 || align="left" | {{flag|Yemen}} || 23,032
+| 164 || align="left" | {{flag|Papua New Guinea}} || 23,587
 |-
-| 165 || align="left" | {{flag|Laos}} || 21,211
+| 165 || align="left" | {{flag|Trinidad and Tobago}} || 22,607
 |-
-| 166 || align="left" | {{flag|Bosnia and Herzegovina}} || 21,023
+| 166 || align="left" | {{flag|Bosnia and Herzegovina}} || 20,106
 |-
-| 167 || align="left" | {{flag|Botswana}} || 19,660
+| 167 || align="left" | {{flag|Laos}} || 19,127
 |-
-| 168 || align="left" | {{flag|Mali}} || 19,020
+| 168 || align="left" | {{flag|Afghanistan}} || 18,734
 |-
-| 169 || align="left" | {{flag|Afghanistan}} || 18,861
+| 169 || align="left" | {{flag|Botswana}} || 18,690
 |-
-| 170 || align="left" | {{flag|Gabon}} || 17,623
+| 170 || align="left" | {{flag|Mali}} || 17,647
 |-
-| 171 || align="left" | {{flag|Georgia}} || 17,007
+| 171 || align="left" | {{flag|Gabon}} || 16,877
 |-
-| 172 || align="left" | {{flag|Albania}} || 16,753
+| 172 || align="left" | {{flag|Georgia}} || 15,925
 |-
-| 173 || align="left" | {{flag|Mozambique}} || 16,695
+| 173 || align="left" | {{flag|Jamaica}} || 15,702
 |-
-| 174 || align="left" | {{flag|Jamaica}} || 16,474
+| 174 || align="left" | {{flag|Albania}} || 15,418
 |-
-| 175 || align="left" | {{flag|Burkina Faso}} || 15,847
+| 175 || align="left" | {{flag|Mozambique}} || 15,093
 |-
-| 176 || align="left" | {{flag|Malta}} || 15,787
+| 176 || align="left" | {{flag|Malta}} || 14,859
 |-
-| 177 || align="left" | {{flag|Benin}} || 15,478
+| 177 || align="left" | {{flag|Burkina Faso}} || 14,593
 |-
-| 178 || align="left" | {{flag|Namibia}} || 14,943
+| 178 || align="left" | {{flag|Mauritius}} || 14,391
 |-
-| 179 || align="left" | {{flag|Mauritius}} || 14,851
+| 179 || align="left" | {{flag|Benin}} || 14,374
 |-
-| 180 || align="left" | {{flag|Mongolia}} || 14,674
+| 180 || align="left" | {{flag|Namibia}} || 14,368
 |-
-| 181 || align="left" | {{flag|Guinea}} || 14,396
+| 181 || align="left" | {{flag|Mongolia}} || 13,637
 |-
-| 182 || align="left" | {{flag|Armenia}} || 14,132
+| 182 || align="left" | {{flag|Armenia}} || 13,444
 |-
-| 183 || align="left" | {{flag|Madagascar}} || 13,647
+| 183 || align="left" | {{flag|Guinea}} || 13,368
 |-
-| 184 || align="left" | {{flag|North Macedonia}} || 13,333
+| 184 || align="left" | {{flag|Zimbabwe}} || 12,818
 |-
-| 185 || align="left" | {{flag|Zimbabwe}} || 12,868
+| 185 || align="left" | {{flag|North Macedonia}} || 12,672
 |-
-| 186 || align="left" | {{flag|The Bahamas}} || 12,815
+| 186 || align="left" | {{flag|The Bahamas}} || 12,664
 |-
-| 187 || align="left" | {{flag|Brunei}} || 12,812
+| 187 || align="left" | {{flag|Madagascar}} || 12,550
 |-
-| 188 || align="left" | {{flag|Nicaragua}} || 12,331
+| 188 || align="left" | {{flag|Nicaragua}} || 12,528
 |-
-| 189 || align="left" | {{flag|Moldova}} || 12,281
+| 189 || align="left" | {{flag|Brunei}} || 12,455
 |-
-| 190 || align="left" | {{flag|Chad}} || 11,937
+| 190 || align="left" | {{flag|Equatorial Guinea}} || 12,142
 |-
-| 191 || align="left" | {{flag|Equatorial Guinea}} || 11,635
+| 191 || align="left" | {{flag|Moldova}} || 11,688
 |-
-| 192 || align="left" | {{flag|Republic of Congo}} || 11,540
+| 192 || align="left" | {{flag|Republic of Congo}} || 11,576
 |-
-| 193 || align="left" | {{flag|Rwanda}} || 11,061
+| 193 || align="left" | {{flag|Chad}} || 11,026
 |-
-| 194 || align="left" | {{flag|Niger}} || 10,347
+| 194 || align="left" | {{flag|Rwanda}} || 10,209
 |-
-| 195 || align="left" | {{flag|Kyrgyzstan}} || 8,715
+| 195 || align="left" | {{flag|Niger}} || 9,443
 |-
-| 196 || align="left" | {{flag|Haiti}} || 8,709
+| 196 || align="left" | {{flag|Haiti}} || 8,819
 |-
-| 197 || align="left" | {{flag|Tajikistan}} || 8,632
+| 197 || align="left" | {{flag|Kyrgyzstan}} || 8,261
 |-
-| 198 || align="left" | {{flag|Kosovo}} || 8,402
+| 198 || align="left" | {{flag|Tajikistan}} || 8,151
 |-
-| 199 || align="left" | {{flag|Guyana}} || 8,064
+| 199 || align="left" | {{flag|Kosovo}} || 7,996
 |-
-| 200 || align="left" | {{flag|Malawi}} || 8,050
+| 200 || align="left" | {{flag|Malawi}} || 7,522
 |-
-| 201 || align="left" | {{flag|Maldives}} || 6,283
+| 201 || align="left" | {{flag|Maldives}} || 5,786
 |-
-| 202 || align="left" | {{flag|Fiji}} || 6,062
+| 202 || align="left" | {{flag|Fiji}} || 5,708
 |-
-| 203 || align="left" | {{flag|Togo}} || 5,995
+| 203 || align="left" | {{flag|Mauritania}} || 5,651
 |-
-| 204 || align="left" | {{flag|Mauritania}} || 5,918
+| 204 || align="left" | {{flag|Togo}} || 5,502
 |-
-| 205 || align="left" | {{flag|Montenegro}} || 5,685
+| 205 || align="left" | {{flag|Montenegro}} || 5,424
 |-
-| 206 || align="left" | {{flag|Barbados}} || 5,322
+| 206 || align="left" | {{flag|Barbados}} || 5,189
 |-
-| 207 || align="left" | {{flag|Somalia}} || 5,218
+| 207 || align="left" | {{flag|Somalia}} || 4,958
 |-
-| 208 || align="left" | {{flag|Eswatini}} || 4,784
+| 208 || align="left" | {{flag|Eswatini}} || 4,657
 |-
-| 209 || align="left" | {{flag|Sierra Leone}} || 4,405
+| 209 || align="left" | {{flag|Sierra Leone}} || 4,229
 |-
-| 210 || align="left" | {{flag|Suriname}} || 4,162
+| 210 || align="left" | {{flag|Guyana}} || 4,121
 |-
-| 211 || align="left" | {{flag|Burundi}} || 3,714
+| 211 || align="left" | {{flag|Suriname}} || 3,774
 |-
-| 212 || align="left" | {{flag|Djibouti}} || 3,423
+| 212 || align="left" | {{flag|South Sudan}} || 3,681
 |-
-| 213 || align="left" | {{flag|South Sudan}} || 3,355
+| 213 || align="left" | {{flag|Burundi}} || 3,573
 |-
-| 214 || align="left" | {{flag|Liberia}} || 3,231
+| 214 || align="left" | {{flag|Liberia}} || 3,222
 |-
-| 215 || align="left" | {{flag|Timor-Leste}} || 3,132
+| 215 || align="left" | {{flag|Djibouti}} || 3,166
 |-
-| 216 || align="left" | {{flag|Bhutan}} || 2,981
+| 216 || align="left" | {{flag|Timor-Leste}} || 2,938
 |-
-| 217 || align="left" | {{flag|Aruba}} || 2,971
+| 217 || align="left" | {{flag|Aruba}} || 2,903
 |-
-| 218 || align="left" | {{flag|Lesotho}} || 2,800
+| 218 || align="left" | {{flag|Bhutan}} || 2,842
 |-
-| 219 || align="left" | {{flag|Central African Republic}} || 2,493
+| 219 || align="left" | {{flag|Lesotho}} || 2,741
 |-
-| 220 || align="left" | {{flag|Eritrea}} || 2,193
+| 220 || align="left" | {{flag|Central African Republic}} || 2,321
 |-
-| 221 || align="left" | {{flag|Cabo Verde}} || 2,156
+| 221 || align="left" | {{flag|Eritrea}} || 2,110
 |-
-| 222 || align="left" | {{flag|St. Lucia}} || 2,103
+| 222 || align="left" | {{flag|Cabo Verde}} || 2,013
 |-
-| 223 || align="left" | {{flag|Belize}} || 2,076
+| 223 || align="left" | {{flag|Belize}} || 2,001
 |-
-| 224 || align="left" | {{flag|The Gambia}} || 1,925
+| 224 || align="left" | {{flag|St. Lucia}} || 1,992
 |-
-| 225 || align="left" | {{flag|Antigua and Barbuda}} || 1,779
+| 225 || align="left" | {{flag|The Gambia}} || 1,773
 |-
-| 226 || align="left" | {{flag|Seychelles}} || 1,670
+| 226 || align="left" | {{flag|Antigua and Barbuda}} || 1,688
 |-
-| 227 || align="left" | {{flag|San Marino}} || 1,621
+| 227 || align="left" | {{flag|Seychelles}} || 1,644
 |-
-| 228 || align="left" | {{flag|Solomon Islands}} || 1,532
+| 228 || align="left" | {{flag|San Marino}} || 1,591
 |-
-| 229 || align="left" | {{flag|Guinea-Bissau}} || 1,507
+| 229 || align="left" | {{flag|Solomon Islands}} || 1,440
 |-
-| 230 || align="left" | {{flag|Grenada}} || 1,295
+| 230 || align="left" | {{flag|Guinea-Bissau}} || 1,397
 |-
-| 231 || align="left" | {{flag|Comoros}} || 1,250
+| 231 || align="left" | {{flag|Grenada}} || 1,238
 |-
-| 232 || align="left" | {{flag|St. Kitts and Nevis}} || 1,087
+| 232 || align="left" | {{flag|Comoros}} || 1,179
 |-
-| 233 || align="left" | {{flag|Vanuatu}} || 1,002
+| 233 || align="left" | {{flag|St. Kitts and Nevis}} || 1,032
 |-
-| 234 || align="left" | {{flag|Samoa}} || 960
+| 234 || align="left" | {{flag|Vanuatu}} || 951
 |-
-| 235 || align="left" | {{flag|St. Vincent and the Grenadines}} || 893
+| 235 || align="left" | {{flag|Samoa}} || 905
 |-
-| 236 || align="left" | {{flag|Dominica}} || 633
+| 236 || align="left" | {{flag|St. Vincent and the Grenadines}} || 856
 |-
-| 237 || align="left" | {{flag|Tonga}} || 509
+| 237 || align="left" | {{flag|Dominica}} || 593
 |-
-| 238 || align="left" | {{flag|São Tomé and Príncipe}} || 463
+| 238 || align="left" | {{flag|Tonga}} || 488
 |-
-| 239 || align="left" | {{flag|Micronesia}} || 391
+| 239 || align="left" | {{flag|São Tomé and Príncipe}} || 430
 |-
-| 240 || align="left" | {{flag|Palau}} || 302
+| 240 || align="left" | {{flag|Micronesia}} || 381
 |-
-| 241 || align="left" | {{flag|Marshall Islands}} || 228
+| 241 || align="left" | {{flag|Palau}} || 291
 |-
-| 242 || align="left" | {{flag|Kiribati}} || 192
+| 242 || align="left" | {{flag|Marshall Islands}} || 220
 |-
-| 243 || align="left" | {{flag|Nauru}} || 111
+| 243 || align="left" | {{flag|Kiribati}} || 184
 |-
-| 244 || align="left" | {{flag|Tuvalu}} || 46
+| 244 || align="left" | {{flag|Nauru}} || 108
 |-
-| 245 || align="left" | {{flag|Pakistan}} || 0
+| 245 || align="left" | {{flag|Tuvalu}} || 42
 |}

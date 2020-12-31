@@ -1,6 +1,5 @@
 import pandas as pd
-from weo import download
-from weo import WEO
+from weo import WEO, download
 import datetime
 # import datapungibea
 
@@ -22,7 +21,7 @@ def get_state_data(year, download_new=False):
     # rename columns
     states.columns = ['Country', 'GDP']
 
-    # clean up data 
+    # clean up data
     states['Country'] = states['Country'].str.strip()
     states = states[~states['Country'].isin(['New England', 'Mideast', 'Great Lakes', 'Plains', 'Southeast', 'Southwest', 'Rocky Mountain', 'Far West'])]
     states = states.replace('Georgia', 'Georgia (U.S. state)|name=Georgia')
@@ -30,17 +29,25 @@ def get_state_data(year, download_new=False):
     # convert gdp to float and create state column
     states['GDP'] = states['GDP'].astype(float)
     states['State?'] = True
+    states['Notes'] = ''
 
     return states
 
-def get_country_data(year, download_new=False):
+def get_country_data(year, download_new=True):
+    filename = 'data/gdp/IMF_1980-' + year + '.csv'
+    
     if download_new:
-        if year == '2020':
-            raise ValueError('2020 data is not yet supported by the WEO package')
-        download(year + '-Oct', path='weo.csv', overwrite=True)
+        if int(year) >= 2020:
+            raise ValueError('2020 and later data is not yet supported by the WEO package')
+        if int(year) <= 1980:
+            raise ValueError('The IMF has no available data before 1980')
+        download(year + '-Oct', path=filename, overwrite=True)
+
+    def add_note(country, note):
+        countries.loc[countries['Country'] == country, 'Notes'] = note 
 
     # read sheet
-    w = WEO('weo.csv')
+    w = WEO(filename)
     countries = w.df
 
     # grab the right data
@@ -56,7 +63,6 @@ def get_country_data(year, download_new=False):
     countries.loc[countries['Country'] == 'Syria', 'GDP'] = '60.043'
     countries['GDP'] = countries['GDP'].astype(float)
     countries['GDP'] *= 1000
-    world_gdp = int(countries['GDP'].sum())
     countries['State?'] = False
 
     # rename countries
@@ -74,11 +80,15 @@ def get_country_data(year, download_new=False):
     for item in replacements:
         countries = countries.replace(item, replacements[item])
 
-    return countries, world_gdp
+    # add notes
+    countries['Notes'] = ''
+    add_note('China', 'Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.')
+    add_note('Syria', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
+    add_note('Russia', 'Figures exclude Republic of Crimea and Sevastopol.')
+
+    return countries
 
 def combine_data(sheet1, sheet2):
-    def add_note(country, note):
-        data.loc[data['Country'] == country, 'Notes'] = note 
 
     # combine and sort data
     data = pd.concat([sheet1, sheet2])
@@ -86,23 +96,19 @@ def combine_data(sheet1, sheet2):
     data = data.reset_index(drop=True)
     data = data.fillna(0.0)
 
-    # add notes
-    data['Notes'] = ''
-    add_note('China', 'Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.')
-    add_note('Syria', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
-    add_note('Russia', 'Figures exclude Republic of Crimea and Sevastopol.')
-
     return data
 
-def write_wikitable(year, data, world_gdp):
+def write_wikitable(year, data):
+    current_date = str(datetime.date.today())
+    world_gdp = int(data[~data['State?']]['GDP'].sum())
 
     # open file to write
     out = open('out/countrystate.txt', 'w')
 
-    # create sortable centered wikitable with titles
+    # create sortable centered wikitable and include all settings and references
     out.write('{| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"')
     out.write('\n|+ National GDPs and U.S. State GDPs, ' + year)
-    out.write('<ref>{{cite web |title = World Economic Outlook Database |url=https://www.imf.org/en/Publications/WEO/weo-database/' + year + '/October |access-date=' + str(datetime.date.today()) + '}}</ref>')
+    out.write('<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/' + year + '/October|access-date=' + current_date + '}}</ref>')
     out.write('\n! # !! Country or U.S. State !! GDP ([[USD]] million)\n')
     out.write('|- style="font-weight:bold; background: #eaecf0"\n')
     out.write("|   || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}\n')
@@ -125,13 +131,14 @@ def write_wikitable(year, data, world_gdp):
     out.write('|}\n')
     out.close()
 
+    print('Successfully created wikitable')
+
 def main():
-    year = '2020'
+    year = '2019'
 
     states = get_state_data(year)
-    countries, world_gdp = get_country_data(year)
+    countries = get_country_data(year)
     data = combine_data(states, countries)
-    write_wikitable(year, data, world_gdp)
-
+    write_wikitable(year, data)
 
 main()
