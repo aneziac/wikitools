@@ -7,16 +7,28 @@ import datetime
 def get_state_data(year, download_new=False):
 
     # read sheet
-    states = pd.read_excel('data/gdp/BEA_2019-2020.xlsx', sheet_name='Table 3')
+    if int(year) >= 2020:
+        states = pd.read_excel('data/gdp/BEA_2019-2020.xlsx', sheet_name='Table 3')
 
-    # get data from specified quarter and year
-    data_years = list(states.iloc[2])
-    if data_years.index(int(year)) == 1:
-        col = 4
+        # get data from specified quarter and year
+        data_years = list(states.iloc[2])
+        if data_years.index(int(year)) == 1:
+            col = 4
+        else:
+            col = 4 + ((len(data_years) - 9) / 2)
+
+        states = states.iloc[4:64, [0, col]]
+
     else:
-        col = 4 + ((len(data_years) - 9) / 2)
-
-    states = states.iloc[5:64, [0, col]]
+        if int(year) > 1997:
+            states = pd.read_csv('data/gdp/BEA_1997-2019.csv')
+            states = states[states['Description'] == 'Current-dollar GDP (millions of current dollars)']
+        elif int(year) >= 1963:
+            states = pd.read_csv('data/gdp/BEA_1963-1997.csv')
+            states = states[states['Description'] == 'All industry total']
+        else:
+            raise ValueError('There is no BEA data before 1963')
+        states = states[['GeoName', year]]
 
     # rename columns
     states.columns = ['Country', 'GDP']
@@ -25,6 +37,7 @@ def get_state_data(year, download_new=False):
     states['Country'] = states['Country'].str.strip()
     states = states[~states['Country'].isin(['New England', 'Mideast', 'Great Lakes', 'Plains', 'Southeast', 'Southwest', 'Rocky Mountain', 'Far West'])]
     states = states.replace('Georgia', 'Georgia (U.S. state)|name=Georgia')
+    states = states[states['Country'] != 'United States']
 
     # convert gdp to float and create state column
     states['GDP'] = states['GDP'].astype(float)
@@ -33,9 +46,12 @@ def get_state_data(year, download_new=False):
 
     return states
 
-def get_country_data(year, download_new=True):
-    filename = 'data/gdp/IMF_1980-' + year + '.csv'
-    
+def get_country_data(year, download_new=False):
+    if int(year) >= 2020:
+        filename = 'data/gdp/IMF_1980-' + year + '.csv'
+    else:
+        filename = 'data/gdp/IMF_1980-2019.csv'
+
     if download_new:
         if int(year) >= 2020:
             raise ValueError('2020 and later data is not yet supported by the WEO package')
@@ -134,7 +150,7 @@ def write_wikitable(year, data):
     print('Successfully created wikitable')
 
 def main():
-    year = '2019'
+    year = '2003'
 
     states = get_state_data(year)
     countries = get_country_data(year)
