@@ -166,9 +166,7 @@ def get_data_year(year, sort=True):
 def get_data_year_range(start_year, end_year):
     year = start_year
     dataframes = []
-    country_list = get_data_year(year, False)[['Country']]
-    country_list.columns = ['Year']
-    dataframes.append(country_list)
+    dataframes.append(get_data_year(year, False)[['Country']])
 
     for _ in range(end_year - start_year + 1):
         data = get_data_year(year, False)[['GDP']]
@@ -179,22 +177,23 @@ def get_data_year_range(start_year, end_year):
     data = pd.concat(dataframes, axis=1)
     data.set_index('Year', inplace=True)
     data = data.transpose()
-    data = data.reset_index()
 
     return data
 
 def save_data():
     data = get_data_year_range(1980, 2020)
-    data.to_csv('data/extracted/statecountry_1980-2020.csv', index=False)
+    data.to_csv('data/extracted/statecountry_1980-2020.csv')
 
 def make_charts():
     data = pd.read_csv('data/extracted/statecountry_1980-2020.csv')
+    data.set_index('Unnamed: 0', inplace=True)
     column = data[['United States', 'China', 'California', 'Italy', 'Germany', 'Japan', 'Texas', 'India']]
     column.plot()
     plt.yscale('log')
     plt.xlabel('Year')
     plt.ylabel('GDP (millions USD)')
     plt.savefig('out/charts/top_economies.png')
+    # plt.show()
 
 def download_new(year):
     if year < 2019:

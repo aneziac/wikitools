@@ -12,7 +12,7 @@
 |-
 | 4 || align="left" | {{flag|Germany}} || 3,780,553
 |-
-| 5 || align="left" | '''{{flag|California}}'''{{refn|Note that these are Q3 estiamtes by the BEA.}} || 3,120,386
+| 5 || align="left" | '''{{flag|California}}'''{{refn|Note that these are Q3 estimates by the BEA.}} || 3,120,386
 |-
 | 6 || align="left" | {{flag|United Kingdom}} || 2,638,296
 |-
