@@ -8,10 +8,12 @@ import matplotlib.pyplot as plt
 def get_state_data(year, download_new=False):
 
     # read sheet
-    if year >= 2020:
+    if year > 2020:
+        raise ValueError('There are no BEA estimates after 2020')
+    if year == 2020:
         states = pd.read_excel('data/gdp/BEA_2019-2020.xlsx', sheet_name='Table 3')
 
-        # get data from specified quarter and year
+        # get data from most recent quarter and year
         data_years = list(states.iloc[2])
         if data_years.index(year) == 1:
             col = 4
@@ -29,12 +31,14 @@ def get_state_data(year, download_new=False):
             states = states[states['Description'] == 'All industry total']
         else:
             raise ValueError('There is no BEA data before 1963')
+
         states = states[['GeoName', str(year)]]
 
     # rename columns
     states.columns = ['Country', 'GDP']
 
     # clean up data
+    states.sort_values(by=['Country'], inplace=True)
     states['Country'] = states['Country'].str.strip()
     states = states[~states['Country'].isin(['New England', 'Mideast', 'Great Lakes', 'Plains', 'Southeast', 'Southwest', 'Rocky Mountain', 'Far West'])]
     states = states.replace('Georgia', 'Georgia (U.S. state)')
@@ -44,32 +48,28 @@ def get_state_data(year, download_new=False):
     states['GDP'] = states['GDP'].astype(float)
     states['State?'] = True
     states['Notes'] = ''
+    if year == 2020:
+        add_note(states, 'California', 'Note that these are Q3 estimates by the BEA.')
 
     return states
 
-def get_country_data(year, download_new=False):
-    if year >= 2020:
-        filename = 'data/gdp/IMF_1980-' + str(year) + '.csv'
-    else:
+def get_country_data(year):
+    if year >= 2026:
+       raise ValueError('There are no available IMF estimates past 2025')
+    elif year >= 2020:
+        filename = 'data/gdp/IMF_2019-2025.csv'
+        countries = pd.read_csv(filename)
+    elif year < 1980:
+        raise ValueError('The IMF has no available data before 1980')
+    else:    
         filename = 'data/gdp/IMF_1980-2019.csv'
+        w = WEO(filename)
+        countries = w.df
 
-    if download_new:
-        if year >= 2020:
-            raise ValueError('2020 and later data is not yet supported by the WEO package')
-        if year <= 1980:
-            raise ValueError('The IMF has no available data before 1980')
-        download(str(year) + '-Oct', path=filename, overwrite=True)
+        # grab the right data
+        countries = countries[countries['Subject Descriptor'] == 'Gross domestic product, current prices']
+        countries = countries[countries['Units'] == 'U.S. dollars']
 
-    def add_note(country, note):
-        countries.loc[countries['Country'] == country, 'Notes'] = note 
-
-    # read sheet
-    w = WEO(filename)
-    countries = w.df
-
-    # grab the right data
-    countries = countries[countries['Subject Descriptor'] == 'Gross domestic product, current prices']
-    countries = countries[countries['Units'] == 'U.S. dollars']
     countries = countries[['Country', str(year)]]
 
     # rename columns
@@ -99,9 +99,9 @@ def get_country_data(year, download_new=False):
 
     # add notes
     countries['Notes'] = ''
-    add_note('China', 'Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.')
-    add_note('Syria', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
-    add_note('Russia', 'Figures exclude Republic of Crimea and Sevastopol.')
+    add_note(countries, 'China', 'Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.')
+    add_note(countries, 'Syria', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
+    add_note(countries, 'Russia', 'Figures exclude Republic of Crimea and Sevastopol.')
 
     return countries
 
@@ -155,6 +155,9 @@ def write_wikitable(year):
 
     print('Successfully created wikitable')
 
+def add_note(df, country, note):
+    df.loc[df['Country'] == country, 'Notes'] = note 
+
 def get_data_year(year, sort=True):
     states = get_state_data(year)
     countries = get_country_data(year)
@@ -176,21 +179,32 @@ def get_data_year_range(start_year, end_year):
     data = pd.concat(dataframes, axis=1)
     data.set_index('Year', inplace=True)
     data = data.transpose()
+    data = data.reset_index()
 
     return data
 
 def save_data():
-    data = get_data_year_range(1980, 2019)
-    data.to_csv('data/extracted/statecountry_1980-2019.csv', index=False)
+    data = get_data_year_range(1980, 2020)
+    data.to_csv('data/extracted/statecountry_1980-2020.csv', index=False)
 
-def main():
-    data = pd.read_csv('data/extracted/statecountry_1980-2019.csv')
+def make_charts():
+    data = pd.read_csv('data/extracted/statecountry_1980-2020.csv')
     column = data[['United States', 'China', 'California', 'Italy', 'Germany', 'Japan', 'Texas', 'India']]
     column.plot()
     plt.yscale('log')
     plt.xlabel('Year')
     plt.ylabel('GDP (millions USD)')
     plt.savefig('out/charts/top_economies.png')
+
+def download_new(year):
+    if year < 2019:
+        raise ValueError('Data is already updated to 2019')
+    elif year >= 2020:
+        raise ValueError('2020 and later data is not yet supported by the WEO package')
+    download(str(year) + '-Oct', path=filename, overwrite=True)
+
+def main():
+    make_charts()
 
 
 main()
