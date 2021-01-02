@@ -3,6 +3,8 @@ from weo import WEO, download
 import datetime
 # import datapungibea
 import matplotlib.pyplot as plt
+import fiona
+import geopandas as gp
 
 
 def get_state_data(year, download_new=False):
@@ -57,23 +59,21 @@ def get_country_data(year):
     if year >= 2026:
        raise ValueError('There are no available IMF estimates past 2025')
     elif year >= 2020:
-        filename = 'data/gdp/IMF_2019-2025.csv'
-        countries = pd.read_csv(filename)
+        countries = pd.read_csv('data/gdp/IMF_2019-2025.csv')
     elif year < 1980:
         raise ValueError('The IMF has no available data before 1980')
     else:    
-        filename = 'data/gdp/IMF_1980-2019.csv'
-        w = WEO(filename)
+        w = WEO('data/gdp/IMF_1980-2019.csv')
         countries = w.df
 
         # grab the right data
         countries = countries[countries['Subject Descriptor'] == 'Gross domestic product, current prices']
         countries = countries[countries['Units'] == 'U.S. dollars']
 
-    countries = countries[['Country', str(year)]]
+    countries = countries[['Country', 'ISO', str(year)]]
 
     # rename columns
-    countries.columns = ['Country', 'GDP']
+    countries.columns = ['Country', 'Country Code', 'GDP']
 
     # clean up data
     countries['GDP'] = countries['GDP'].str.replace(',','')
@@ -160,7 +160,7 @@ def add_note(df, country, note):
 
 def get_data_year(year, sort=True):
     states = get_state_data(year)
-    countries = get_country_data(year)
+    countries = get_country_data(year)[['Country', 'GDP', 'State?', 'Notes']]
     return combine_data(states, countries, sort)
 
 def get_data_year_range(start_year, end_year):
@@ -184,7 +184,7 @@ def save_data():
     data = get_data_year_range(1980, 2020)
     data.to_csv('data/extracted/statecountry_1980-2020.csv')
 
-def make_charts():
+def make_chart():
     data = pd.read_csv('data/extracted/statecountry_1980-2020.csv')
     data.set_index('Unnamed: 0', inplace=True)
     column = data[['United States', 'China', 'California', 'Italy', 'Germany', 'Japan', 'Texas', 'India']]
@@ -193,17 +193,54 @@ def make_charts():
     plt.xlabel('Year')
     plt.ylabel('GDP (millions USD)')
     plt.savefig('out/charts/top_economies.png')
-    # plt.show()
+    plt.show()
 
 def download_new(year):
     if year < 2019:
         raise ValueError('Data is already updated to 2019')
     elif year >= 2020:
         raise ValueError('2020 and later data is not yet supported by the WEO package')
-    download(str(year) + '-Oct', path=filename, overwrite=True)
+    download(str(year) + '-Oct', path='data/gdp/IMF_1980-' + str(year) + '.csv', overwrite=True)
+
+def make_map(year):
+    # see https://towardsdatascience.com/a-complete-guide-to-an-interactive-geographical-map-using-python-f4c5197e23e0
+    # read shapefile using Geopandas
+    shapefile = 'data/maps/countries_110m/ne_110m_admin_0_countries.shp'
+    gdf = gp.read_file(shapefile)[['ADMIN', 'ADM0_A3', 'geometry']]
+    gdf.columns = ['country', 'country_code', 'geometry']
+
+    # drop row corresponding to Antarctica
+    gdf = gdf.drop(gdf.index[159])
+
+    # read country data
+    countries = get_country_data(year)[['Country Code', 'GDP']]
+    countries.columns = ['country_code', 'gdp']
+
+    data = gdf.merge(countries, on='country_code', how='left')
+
+    fig, ax = plt.subplots()
+    ax.axis('off')
+
+    # see https://geopandas.org/mapping.html
+    data.plot(
+        column='gdp',
+        ax=ax,
+        legend=True,
+        legend_kwds={
+            'label': 'GDP by Country (' + str(year) + ')',
+            'orientation': 'horizontal'
+        },
+        # scheme='quantiles',
+        missing_kwds={
+            'color': 'lightgrey'
+        }
+    )
+    plt.savefig('out/maps/world_economies.png')
+    plt.show()
+
 
 def main():
-    make_charts()
+    make_map(2019)
 
 
 main()
