@@ -3,6 +3,7 @@ from weo import WEO, download
 import datetime
 # import datapungibea
 import matplotlib.pyplot as plt
+import matplotlib
 import fiona
 import geopandas as gp
 
@@ -76,6 +77,7 @@ def get_country_data(year):
     countries.columns = ['Country', 'Country Code', 'GDP']
 
     # clean up data
+    countries = countries[countries['Country'] != 'West Bank and Gaza']
     countries['GDP'] = countries['GDP'].str.replace(',','')
     countries.loc[countries['Country'] == 'Syria', 'GDP'] = '60.043'
     countries['GDP'] = countries['GDP'].astype(float)
@@ -117,10 +119,21 @@ def combine_data(sheet1, sheet2, sort):
 
     return data
 
+
+class Reference:
+    def __init__(self, title, url):
+        self.title = title
+        self.url = url
+
+    @property
+    def ref():
+        return '<ref>{{cite web|title = ' + title + 'url=|' + url + '|access-date=' + current_date + '}}</ref>'
+
 def write_wikitable(year):
     current_date = str(datetime.date.today())
     data = get_data_year(year)
     world_gdp = data[~data['State?']]['GDP'].sum()
+    weo = Reference('World Economic Outlook Database', 'https://www.imf.org/en/Publications/WEO/weo-database/' + str(year) + '/October')
 
     # open file to write
     out = open('out/wikitables/countrystategdp.txt', 'w')
@@ -128,7 +141,7 @@ def write_wikitable(year):
     # create sortable centered wikitable and include all settings and references
     out.write('{| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"')
     out.write('\n|+ National GDPs and U.S. State GDPs, ' + str(year))
-    out.write('<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/' + str(year) + '/October|access-date=' + current_date + '}}</ref>')
+    out.write(weo.ref)
     out.write('\n! # !! Country or U.S. State !! GDP ([[USD]] million)\n')
     out.write('|- style="font-weight:bold; background: #eaecf0"\n')
     out.write("|   || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}\n')
@@ -207,7 +220,7 @@ def make_map(year):
     # read shapefile using Geopandas
     shapefile = 'data/maps/countries_110m/ne_110m_admin_0_countries.shp'
     gdf = gp.read_file(shapefile)[['ADMIN', 'ADM0_A3', 'geometry']]
-    gdf.columns = ['country', 'country_code', 'geometry']
+    gdf.columns = ['region', 'country_code', 'geometry']
 
     # drop row corresponding to Antarctica
     gdf = gdf.drop(gdf.index[159])
@@ -217,6 +230,22 @@ def make_map(year):
     countries.columns = ['country_code', 'gdp']
 
     data = gdf.merge(countries, on='country_code', how='left')
+    pd.set_option('display.max_rows', None)
+
+    # combine regions into countries as designated by IMF
+    data['country'] = data['region']
+    replacements = {
+        'Kosovo': 'Republic of Serbia',
+        'Western Sahara': 'Morocco',
+        'Greenland': 'Denmark',
+        'Somaliland': 'Somalia',
+        'Falkland Islands': 'United Kingdom',
+        'French Southern and Antarctic Lands': 'France',
+        'New Caledonia': 'France'
+    }
+    for item in replacements:
+        data.loc[data['region'] == item, 'country'] = replacements[item]
+    data = data.dissolve(by='country')
 
     fig, ax = plt.subplots()
     ax.axis('off')
@@ -233,7 +262,9 @@ def make_map(year):
         # scheme='quantiles',
         missing_kwds={
             'color': 'lightgrey'
-        }
+        },
+        cmap='OrRd',
+        norm=matplotlib.colors.LogNorm(vmin=data['gdp'].min(), vmax=data['gdp'].max())
     )
     plt.savefig('out/maps/world_economies.png')
     plt.show()
