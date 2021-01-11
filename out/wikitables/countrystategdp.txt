@@ -1,8 +1,8 @@
 {| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"
-|+ National GDPs and U.S. State GDPs, 2020<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/2020/October|access-date=2020-12-31}}</ref>
+|+ National GDPs and U.S. State GDPs, 2020<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/2020/October|access-date=2021-01-10}}</ref>
 ! # !! Country or U.S. State !! GDP ([[USD]] million)
 |- style="font-weight:bold; background: #eaecf0"
-|   || align="left" | {{noflag}} ''[[Gross world product|World]]'' || 83,280,853
+|   || align="left" | {{noflag}} ''[[Gross world product|World]]'' || 83,266,103
 |-
 | 1 || align="left" | {{flag|United States}} || 20,807,269
 |-
@@ -350,149 +350,147 @@
 |-
 | 173 || align="left" | {{flag|Gabon}} || 15,145
 |-
-| 174 || align="left" | {{flag|West Bank and Gaza}} || 14,750
+| 174 || align="left" | {{flag|Mozambique}} || 14,557
 |-
-| 175 || align="left" | {{flag|Mozambique}} || 14,557
+| 175 || align="left" | {{flag|Malta}} || 14,290
 |-
-| 176 || align="left" | {{flag|Malta}} || 14,290
+| 176 || align="left" | {{flag|Guinea}} || 14,238
 |-
-| 177 || align="left" | {{flag|Guinea}} || 14,238
+| 177 || align="left" | {{flag|Jamaica}} || 14,228
 |-
-| 178 || align="left" | {{flag|Jamaica}} || 14,228
+| 178 || align="left" | {{flag|Madagascar}} || 14,199
 |-
-| 179 || align="left" | {{flag|Madagascar}} || 14,199
+| 179 || align="left" | {{flag|Albania}} || 14,034
 |-
-| 180 || align="left" | {{flag|Albania}} || 14,034
+| 180 || align="left" | {{flag|Zimbabwe}} || 14,002
 |-
-| 181 || align="left" | {{flag|Zimbabwe}} || 14,002
+| 181 || align="left" | {{flag|Mongolia}} || 13,385
 |-
-| 182 || align="left" | {{flag|Mongolia}} || 13,385
+| 182 || align="left" | {{flag|Niger}} || 12,971
 |-
-| 183 || align="left" | {{flag|Niger}} || 12,971
+| 183 || align="left" | {{flag|Armenia}} || 12,813
 |-
-| 184 || align="left" | {{flag|Armenia}} || 12,813
+| 184 || align="left" | {{flag|North Macedonia}} || 12,510
 |-
-| 185 || align="left" | {{flag|North Macedonia}} || 12,510
+| 185 || align="left" | {{flag|Nicaragua}} || 11,905
 |-
-| 186 || align="left" | {{flag|Nicaragua}} || 11,905
+| 186 || align="left" | {{flag|The Bahamas}} || 11,560
 |-
-| 187 || align="left" | {{flag|The Bahamas}} || 11,560
+| 187 || align="left" | {{flag|Mauritius}} || 11,341
 |-
-| 188 || align="left" | {{flag|Mauritius}} || 11,341
+| 188 || align="left" | {{flag|Moldova}} || 11,241
 |-
-| 189 || align="left" | {{flag|Moldova}} || 11,241
+| 189 || align="left" | {{flag|Brunei}} || 10,647
 |-
-| 190 || align="left" | {{flag|Brunei}} || 10,647
+| 190 || align="left" | {{flag|Chad}} || 10,510
 |-
-| 191 || align="left" | {{flag|Chad}} || 10,510
+| 191 || align="left" | {{flag|Rwanda}} || 10,428
 |-
-| 192 || align="left" | {{flag|Rwanda}} || 10,428
+| 192 || align="left" | {{flag|Namibia}} || 10,252
 |-
-| 193 || align="left" | {{flag|Namibia}} || 10,252
+| 193 || align="left" | {{flag|Equatorial Guinea}} || 10,028
 |-
-| 194 || align="left" | {{flag|Equatorial Guinea}} || 10,028
+| 194 || align="left" | {{flag|Republic of Congo}} || 9,964
 |-
-| 195 || align="left" | {{flag|Republic of Congo}} || 9,964
+| 195 || align="left" | {{flag|Haiti}} || 8,347
 |-
-| 196 || align="left" | {{flag|Haiti}} || 8,347
+| 196 || align="left" | {{flag|Malawi}} || 8,330
 |-
-| 197 || align="left" | {{flag|Malawi}} || 8,330
+| 197 || align="left" | {{flag|Tajikistan}} || 7,898
 |-
-| 198 || align="left" | {{flag|Tajikistan}} || 7,898
+| 198 || align="left" | {{flag|Kosovo}} || 7,484
 |-
-| 199 || align="left" | {{flag|Kosovo}} || 7,484
+| 199 || align="left" | {{flag|Kyrgyzstan}} || 7,480
 |-
-| 200 || align="left" | {{flag|Kyrgyzstan}} || 7,480
+| 200 || align="left" | {{flag|Mauritania}} || 7,428
 |-
-| 201 || align="left" | {{flag|Mauritania}} || 7,428
+| 201 || align="left" | {{flag|Guyana}} || 6,806
 |-
-| 202 || align="left" | {{flag|Guyana}} || 6,806
+| 202 || align="left" | {{flag|Togo}} || 5,719
 |-
-| 203 || align="left" | {{flag|Togo}} || 5,719
+| 203 || align="left" | {{flag|Montenegro}} || 4,943
 |-
-| 204 || align="left" | {{flag|Montenegro}} || 4,943
+| 204 || align="left" | {{flag|Somalia}} || 4,918
 |-
-| 205 || align="left" | {{flag|Somalia}} || 4,918
+| 205 || align="left" | {{flag|Maldives}} || 4,712
 |-
-| 206 || align="left" | {{flag|Maldives}} || 4,712
+| 206 || align="left" | {{flag|Barbados}} || 4,630
 |-
-| 207 || align="left" | {{flag|Barbados}} || 4,630
+| 207 || align="left" | {{flag|South Sudan}} || 4,177
 |-
-| 208 || align="left" | {{flag|South Sudan}} || 4,177
+| 208 || align="left" | {{flag|Sierra Leone}} || 4,140
 |-
-| 209 || align="left" | {{flag|Sierra Leone}} || 4,140
+| 209 || align="left" | {{flag|Fiji}} || 3,932
 |-
-| 210 || align="left" | {{flag|Fiji}} || 3,932
+| 210 || align="left" | {{flag|Eswatini}} || 3,848
 |-
-| 211 || align="left" | {{flag|Eswatini}} || 3,848
+| 211 || align="left" | {{flag|Djibouti}} || 3,408
 |-
-| 212 || align="left" | {{flag|Djibouti}} || 3,408
+| 212 || align="left" | {{flag|Burundi}} || 3,131
 |-
-| 213 || align="left" | {{flag|Burundi}} || 3,131
+| 213 || align="left" | {{flag|Liberia}} || 3,068
 |-
-| 214 || align="left" | {{flag|Liberia}} || 3,068
+| 214 || align="left" | {{flag|Bhutan}} || 2,587
 |-
-| 215 || align="left" | {{flag|Bhutan}} || 2,587
+| 215 || align="left" | {{flag|Suriname}} || 2,538
 |-
-| 216 || align="left" | {{flag|Suriname}} || 2,538
+| 216 || align="left" | {{flag|Central African Republic}} || 2,321
 |-
-| 217 || align="left" | {{flag|Central African Republic}} || 2,321
+| 217 || align="left" | {{flag|Aruba}} || 2,288
 |-
-| 218 || align="left" | {{flag|Aruba}} || 2,288
+| 218 || align="left" | {{flag|Eritrea}} || 2,075
 |-
-| 219 || align="left" | {{flag|Eritrea}} || 2,075
+| 219 || align="left" | {{flag|Timor-Leste}} || 1,920
 |-
-| 220 || align="left" | {{flag|Timor-Leste}} || 1,920
+| 220 || align="left" | {{flag|Lesotho}} || 1,906
 |-
-| 221 || align="left" | {{flag|Lesotho}} || 1,906
+| 221 || align="left" | {{flag|Cabo Verde}} || 1,870
 |-
-| 222 || align="left" | {{flag|Cabo Verde}} || 1,870
+| 222 || align="left" | {{flag|The Gambia}} || 1,806
 |-
-| 223 || align="left" | {{flag|The Gambia}} || 1,806
+| 223 || align="left" | {{flag|St. Lucia}} || 1,770
 |-
-| 224 || align="left" | {{flag|St. Lucia}} || 1,770
+| 224 || align="left" | {{flag|Belize}} || 1,556
 |-
-| 225 || align="left" | {{flag|Belize}} || 1,556
+| 225 || align="left" | {{flag|Solomon Islands}} || 1,551
 |-
-| 226 || align="left" | {{flag|Solomon Islands}} || 1,551
+| 226 || align="left" | {{flag|San Marino}} || 1,410
 |-
-| 227 || align="left" | {{flag|San Marino}} || 1,410
+| 227 || align="left" | {{flag|Guinea-Bissau}} || 1,392
 |-
-| 228 || align="left" | {{flag|Guinea-Bissau}} || 1,392
+| 228 || align="left" | {{flag|Antigua and Barbuda}} || 1,389
 |-
-| 229 || align="left" | {{flag|Antigua and Barbuda}} || 1,389
+| 229 || align="left" | {{flag|Comoros}} || 1,200
 |-
-| 230 || align="left" | {{flag|Comoros}} || 1,200
+| 230 || align="left" | {{flag|Seychelles}} || 1,198
 |-
-| 231 || align="left" | {{flag|Seychelles}} || 1,198
+| 231 || align="left" | {{flag|Grenada}} || 1,074
 |-
-| 232 || align="left" | {{flag|Grenada}} || 1,074
+| 232 || align="left" | {{flag|St. Kitts and Nevis}} || 871
 |-
-| 233 || align="left" | {{flag|St. Kitts and Nevis}} || 871
+| 233 || align="left" | {{flag|Vanuatu}} || 864
 |-
-| 234 || align="left" | {{flag|Vanuatu}} || 864
+| 234 || align="left" | {{flag|Samoa}} || 829
 |-
-| 235 || align="left" | {{flag|Samoa}} || 829
+| 235 || align="left" | {{flag|St. Vincent and the Grenadines}} || 777
 |-
-| 236 || align="left" | {{flag|St. Vincent and the Grenadines}} || 777
+| 236 || align="left" | {{flag|Dominica}} || 545
 |-
-| 237 || align="left" | {{flag|Dominica}} || 545
+| 237 || align="left" | {{flag|Tonga}} || 503
 |-
-| 238 || align="left" | {{flag|Tonga}} || 503
+| 238 || align="left" | {{flag|São Tomé and Príncipe}} || 417
 |-
-| 239 || align="left" | {{flag|São Tomé and Príncipe}} || 417
+| 239 || align="left" | {{flag|Micronesia}} || 395
 |-
-| 240 || align="left" | {{flag|Micronesia}} || 395
+| 240 || align="left" | {{flag|Palau}} || 251
 |-
-| 241 || align="left" | {{flag|Palau}} || 251
+| 241 || align="left" | {{flag|Marshall Islands}} || 225
 |-
-| 242 || align="left" | {{flag|Marshall Islands}} || 225
+| 242 || align="left" | {{flag|Kiribati}} || 194
 |-
-| 243 || align="left" | {{flag|Kiribati}} || 194
+| 243 || align="left" | {{flag|Nauru}} || 114
 |-
-| 244 || align="left" | {{flag|Nauru}} || 114
+| 244 || align="left" | {{flag|Tuvalu}} || 45
 |-
-| 245 || align="left" | {{flag|Tuvalu}} || 45
-|-
-| 246 || align="left" | {{flag|Pakistan}} || 0
+| 245 || align="left" | {{flag|Pakistan}} || 0
 |}
