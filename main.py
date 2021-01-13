@@ -9,28 +9,19 @@ import geopandas as gp
 
 
 class EconomicData:
-    def __init__(self, year=2020):
-        self.year = year
+    def __init__(self, data_year=2020):
+        self.year = data_year
         self.data_sources = [
-                CountryData(year), # countries of the world
-                StateData(year) # US States
+                StateData(data_year), # US States
+                CountryData(data_year) # countries of the world
             ]
-        self.data = self.combine_data([source.data for source in self.data_sources])
-
-    def combine_data(self, dataframes):
-        # combine and sort data
-        combined_data = pd.concat(dataframes)
-        combined_data = combined_data.reset_index(drop=True)
-        combined_data = combined_data.fillna(0.0)
-        combined_data['GDP'] = combined_data['GDP'].astype(int)
-
-        return combined_data
+        self.data = pd.concat([source.get_data() for source in self.data_sources], ignore_index=True)
 
     def get_sorted_data(self):
         return self.data.sort_values(by=['GDP'], ascending=False)
 
     def write_wikitable(self):
-        data = self.get_sorted_data()[['Country', 'GDP', 'State?', 'Notes']]
+        data = self.get_sorted_data()[['Region', 'GDP', 'State?', 'Notes']]
         world_gdp = data[~data['State?']]['GDP'].sum()
 
         weo = Reference('World Economic Outlook Database', 'https://www.imf.org/en/Publications/WEO/weo-database/' + str(self.year) + '/October')
@@ -68,37 +59,12 @@ class EconomicData:
 
         print('Successfully created wikitable')
 
-#    def get_data_year(year, sort=True):
-#        states = get_state_data(year)
-#        self.data = get_country_data(year)[['Country', 'GDP', 'State?', 'Notes']]
-#        return combine_data(states, self.data, sort)
-
-    def get_data_year_range(self, start_year, end_year):
-        year = start_year
-        dataframes = []
-        dataframes.append(self.data[['Country']])
-
-        for _ in range(end_year - start_year + 1):
-            data = self.data[['GDP']]
-            data.columns = [str(year)]
-            dataframes.append(data)
-            year += 1
-
-        data = pd.concat(dataframes, axis=1)
-        data.set_index('Year', inplace=True)
-        data = data.transpose()
-
-        return data
-
-    def save_data(self):
-        data = self.get_data_year_range(1980, 2020)
-        data.to_csv('data/extracted/statecountry_1980-2020.csv')
-
-    def make_chart(self):
-        data = pd.read_csv('data/extracted/statecountry_1980-2020.csv')
-        data.set_index('Unnamed: 0', inplace=True)
-        column = data[['United States', 'China', 'California', 'Italy', 'Germany', 'Japan', 'Texas', 'India']]
-        column.plot()
+    def make_chart(self, start_year=1980, end_year=2020):
+        data = self.data
+        # data = self.data[self.data['Type'] == 'US State']
+        data = data[data[str(end_year)].notna()].sort_values(by=str(end_year)).tail(8)
+        data = data.set_index('Region')[[str(start_year + y) for y in range(end_year - start_year - 1)]].transpose()
+        data.plot()
         plt.yscale('log')
         plt.xlabel('Year')
         plt.ylabel('GDP (millions USD)')
@@ -113,17 +79,16 @@ class EconomicData:
         gdf.columns = ['region', 'country_code', 'geometry']
 
         # drop row corresponding to Antarctica
-        gdf = gdf.drop(gdf.index[159])
+        # gdf = gdf.drop(gdf.index[159])
 
         # read country data
-        data = self.data[self.data['State?']][['Country Code', 'GDP']]
+        data = self.data[~self.data['State?']][['Country Code', 'GDP']]
         data.columns = ['country_code', 'gdp']
 
-        data = gdf.merge(data, on='country_code', how='left')
-        pd.set_option('display.max_rows', None)
+        data = gdf.merge(data, on='country_code', how='left').dropna()
 
         # combine regions into self.data as designated by IMF
-        data['country'] = data['region']
+        data['Region'] = data['region']
         replacements = {
             'Kosovo': 'Republic of Serbia',
             'Western Sahara': 'Morocco',
@@ -134,11 +99,12 @@ class EconomicData:
             'New Caledonia': 'France'
         }
         for item in replacements:
-            data.loc[data['region'] == item, 'country'] = replacements[item]
-        data = data.dissolve(by='country')
+            data.loc[data['region'] == item, 'Region'] = replacements[item]
+        data = data.dissolve(by='Region')
 
         fig, ax = plt.subplots()
         ax.axis('off')
+        print(data)
 
         # see https://geopandas.org/mapping.html
         data.plot(
@@ -150,9 +116,9 @@ class EconomicData:
                 'orientation': 'horizontal'
             },
             # scheme='quantiles',
-            missing_kwds={
-                'color': 'lightgrey'
-            },
+            #missing_kwds={
+            #    'color': 'lightgrey'
+            #},
             cmap='OrRd',
             norm=matplotlib.colors.LogNorm(vmin=data['gdp'].min(), vmax=data['gdp'].max())
         )
@@ -168,8 +134,10 @@ class DataSource():
         self.clean()
 
     def add_note(self, country, note):
-        self.data.loc[self.data['Country'] == country, 'Notes'] = note
+        self.data.loc[self.data['Region'] == country, 'Notes'] = note
 
+    def get_data(self):
+        return self.data
 
 class CountryData(DataSource):
     def download(self):
@@ -191,18 +159,16 @@ class CountryData(DataSource):
             data = data[data['Subject Descriptor'] == 'Gross domestic product, current prices']
             data = data[data['Units'] == 'U.S. dollars']
 
-        self.data = data[['Country', 'ISO', str(self.year)]]
+        self.year_range = [str(1980 + y) for y in range(self.year - 1979)]
+        self.data = data[['Country', 'ISO'] + self.year_range]
 
-    def clean(self):     
-        self.data.columns = ['Country', 'Country Code', 'GDP']
-
-        # clean up data
-        self.data = self.data[self.data['Country'] != 'West Bank and Gaza'] # FIX: should be included in wikitable, not in world map
-        self.data['GDP'] = self.data['GDP'].str.replace(',','')
-        self.data.loc[self.data['Country'] == 'Syria', 'GDP'] = '60.043'
-        self.data['GDP'] = self.data['GDP'].astype(float)
-        self.data['GDP'] *= 1000
-        self.data['State?'] = False
+    def clean(self):
+        self.data.columns = ['Region', 'Code'] + self.year_range
+        for year in self.year_range:
+            self.data[year] = self.data[year].str.replace(',', '').astype(float)
+        # self.data.loc[self.data['Region'] == 'Syria', 'GDP'] = '60.043'
+        self.data[self.year_range] *= 1000
+        self.data.insert(2, 'Type', 'Country')
 
         # rename self.data
         replacements = {
@@ -220,7 +186,7 @@ class CountryData(DataSource):
             self.data = self.data.replace(item, replacements[item])
 
         # add notes
-        self.data['Notes'] = ''
+        self.data.insert(3, 'Notes', '')
         self.add_note('China', 'Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.')
         self.add_note('Syria', "Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.")
         self.add_note('Russia', 'Figures exclude Republic of Crimea and Sevastopol.')
@@ -231,48 +197,53 @@ class StateData(DataSource):
         pass
 
     def read(self):
-        # read sheet
-        if self.year > 2020:
-            raise ValueError('There are no BEA estimates from after 2020 yet')
-        if self.year == 2020:
-            self.data = pd.read_excel('data/gdp/BEA_2019-2020.xlsx', sheet_name='Table 3')
+        early_data = pd.read_csv('data/gdp/BEA_1963-1997.csv')
+        early_data = early_data[early_data['Description'] == 'All industry total']
+        early_data = early_data.sort_values(by='GeoName')
+        early_data = early_data[['GeoName'] + [str(1963 + y) for y in range(34)]]
+        early_data = early_data.reset_index(drop=True)
 
-            # get data from most recent quarter and year
-            data_years = list(self.data.iloc[2])
-            if data_years.index(self.year) == 1:
-                col = 4
-            else:
-                col = 4 + ((len(data_years) - 9) / 2)
+        late_data = pd.read_csv('data/gdp/BEA_1997-2019.csv')
+        late_data = late_data[late_data['Description'] == 'Current-dollar GDP (millions of current dollars)']
+        late_data = late_data.sort_values(by='GeoName')
+        late_data = late_data[[str(1997 + y) for y in range(23)]]
+        late_data = late_data.reset_index(drop=True)
 
-            self.data = self.data.iloc[4:64, [0, col]]
+        recent_data = pd.read_excel('data/gdp/BEA_2019-2020.xlsx', sheet_name='Table 3')
 
+        # get data from most recent quarter and year
+        data_years = list(recent_data.iloc[2])
+        if data_years.index(self.year) == 1:
+            col = 4
         else:
-            if year > 1997:
-                self.data = pd.read_csv('data/gdp/BEA_1997-2019.csv')
-                self.data = self.data[self.data['Description'] == 'Current-dollar GDP (millions of current dollars)']
-            elif year >= 1963:
-                self.data = pd.read_csv('data/gdp/BEA_1963-1997.csv')
-                self.data = self.data[self.data['Description'] == 'All industry total']
-            else:
-                raise ValueError('There is no BEA data before 1963')
+            col = 4 + ((len(data_years) - 9) / 2)
 
-            self.data = self.data[['GeoName', str(self.year)]]
+        recent_data = recent_data.iloc[4:64, [0, col]]
+        recent_data.columns = ['Region', str(self.year)]
+        recent_data = recent_data.sort_values(by='Region')
+        recent_data = recent_data[[str(self.year)]]
+        recent_data = recent_data.reset_index(drop=True)
+
+        self.data = pd.concat([early_data, late_data, recent_data], axis=1)
 
     def clean(self):
         # rename columns
-        self.data.columns = ['Country', 'GDP']
+        self.year_range = [str(1963 + y) for y in range(self.year - 1962)]
+        self.data.columns = ['Region'] + self.year_range
 
         # clean up data
-        self.data.sort_values(by=['Country'], inplace=True)
-        self.data['Country'] = self.data['Country'].str.strip()
-        self.data = self.data[~self.data['Country'].isin(['New England', 'Mideast', 'Great Lakes', 'Plains', 'Southeast', 'Southwest', 'Rocky Mountain', 'Far West'])]
-        self.data = self.data.replace('Georgia', 'Georgia (U.S. state)')
-        self.data = self.data[self.data['Country'] != 'United States']
+        # self.data = self.data[~self.data['Region'].isin(['New England', 'Mideast', 'Great Lakes', 'Plains', 'Southeast', 'Southwest', 'Rocky Mountain', 'Far West'])]
+        # self.data = self.data.replace('Georgia', 'Georgia (U.S. state)')
+        self.data = self.data[self.data['Region'] != 'United States']
+        abbrevs = pd.read_csv('data/abbreviations/state_abbrevs.csv')
+        abbrevs = abbrevs[['State', 'Code']]
+        abbrevs.columns = ['Region', 'Code']
+        self.data = pd.merge(abbrevs, self.data, on='Region')
 
         # convert gdp to float and create state column
-        self.data['GDP'] = self.data['GDP'].astype(float)
-        self.data['State?'] = True
-        self.data['Notes'] = ''
+        self.data[self.year_range] = self.data[self.year_range].astype(float)
+        self.data.insert(2, 'Type', 'US State')
+        self.data.insert(3, 'Notes', '')
         if self.year == 2020:
             self.add_note('California', 'Note that these are Q3 estimates by the BEA.')
 
@@ -288,8 +259,11 @@ class Reference:
 
 
 def main():
+    pd.set_option('display.max_rows', None)
     ed = EconomicData()
-    ed.write_wikitable()
+    ed.make_chart()
+    # ed.write_wikitable()
+    # ed.make_map(2019)
 
 
 main()
