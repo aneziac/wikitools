@@ -1,11 +1,14 @@
 import pandas as pd
 import weo
 import datetime
+import math
 # import datapungibea
 import matplotlib.pyplot as plt
-import matplotlib
+import matplotlib.colors as mcolors
+import matplotlib.patches as mpatches
 import fiona
 import geopandas as gp
+from numpy import nan as NaN
 
 
 class EconomicData:
@@ -79,48 +82,87 @@ class EconomicData:
         gdf.columns = ['region', 'country_code', 'geometry']
 
         # drop row corresponding to Antarctica
-        # gdf = gdf.drop(gdf.index[159])
+        gdf = gdf.drop(gdf.index[159])
+
+        # substitute West Bank & Gaza data for Palestine
+        gdf.loc[gdf['region'] == 'Palestine', 'country_code'] = 'WBG'
 
         # read country data
-        data = self.data[~self.data['State?']][['Country Code', 'GDP']]
+        data = self.data[self.data['Type'] == 'Country'][['Code', str(year)]]
         data.columns = ['country_code', 'gdp']
 
-        data = gdf.merge(data, on='country_code', how='left').dropna()
+        data = pd.merge(gdf, data, on='country_code', how='outer')
 
         # combine regions into self.data as designated by IMF
-        data['Region'] = data['region']
+        data['nation'] = data['region']
         replacements = {
             'Kosovo': 'Republic of Serbia',
+            'Northern Cyprus': 'Cyprus',
             'Western Sahara': 'Morocco',
             'Greenland': 'Denmark',
             'Somaliland': 'Somalia',
             'Falkland Islands': 'United Kingdom',
             'French Southern and Antarctic Lands': 'France',
+            # 'Puerto Rico': 'United States',
             'New Caledonia': 'France'
         }
         for item in replacements:
-            data.loc[data['region'] == item, 'Region'] = replacements[item]
-        data = data.dissolve(by='Region')
+            data.loc[data['region'] == item, 'nation'] = replacements[item]
+        data = data.dissolve(by='nation', aggfunc='sum')
+        data = data.replace({0:NaN})
 
         fig, ax = plt.subplots()
         ax.axis('off')
-        print(data)
+
+        def get_labels():
+            units = ['billion', 'trillion']
+            labels = ['No data']
+
+            def format_bound(bound):
+                seps_needed = int(math.log(bound + 1, 10)) // 3
+                unit = units[seps_needed - 1]
+                new_bound = int(bound / (10 ** (3 * seps_needed)))
+                return f'\${new_bound} {unit}'
+
+            for x in range(1, len(boundaries) - 1):
+                lower_bound = format_bound(boundaries[x])
+
+                if x == len(boundaries) - 2:
+                    return labels + [f'> {lower_bound}']
+
+                upper_bound = format_bound(boundaries[x + 1])
+
+                if x == 1:
+                    labels.append(f'< {upper_bound}')
+                else:
+                    labels.append(f'{lower_bound} - {upper_bound}')
+
+        if False:
+            cmap = 'OrRd'
+            norm = mcolors.LogNorm(vmin=data['gdp'].min(), vmax=data['gdp'].max())
+        else:
+            cmap = mcolors.ListedColormap(['lightgrey', 'darkred', 'red', 'darkorange', 'gold', 'lightgreen', 'green'])
+            boundaries = [-1, 0, 100_000, 500_000, 1_000_000, 3_000_000, 5_000_000, float('inf')]
+            norm = mcolors.BoundaryNorm(boundaries, cmap.N, clip=True)
+            legend_colors = [mpatches.Patch(color=cmap(b)) for b in range(len(boundaries))]
+            plt.legend(legend_colors, get_labels())
+
 
         # see https://geopandas.org/mapping.html
         data.plot(
             column='gdp',
             ax=ax,
-            legend=True,
-            legend_kwds={
-                'label': 'GDP by Country (' + str(year) + ')',
-                'orientation': 'horizontal'
-            },
-            # scheme='quantiles',
-            #missing_kwds={
-            #    'color': 'lightgrey'
+            #legend=True,
+            #legend_kwds={
+            #    'label': 'GDP by Country (' + str(year) + ')',
+            #    'orientation': 'horizontal'
             #},
-            cmap='OrRd',
-            norm=matplotlib.colors.LogNorm(vmin=data['gdp'].min(), vmax=data['gdp'].max())
+            #scheme='quintiles',
+            missing_kwds={
+                'color': 'lightgrey'
+            },
+            cmap=cmap,
+            norm=norm
         )
         plt.savefig('out/maps/world_economies.png')
         plt.show()
@@ -261,9 +303,9 @@ class Reference:
 def main():
     pd.set_option('display.max_rows', None)
     ed = EconomicData()
-    ed.make_chart()
+    # ed.make_chart()
+    ed.make_map(2019)
     # ed.write_wikitable()
-    # ed.make_map(2019)
 
 
 main()
