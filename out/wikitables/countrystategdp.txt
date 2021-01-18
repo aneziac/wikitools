@@ -1,18 +1,18 @@
 {| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"
-|+ National GDPs and U.S. State GDPs, 2020<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/2020/October|access-date=2021-01-10}}</ref>
+|+ National GDPs and U.S. State GDPs, 2020<ref>{{cite web|title = World Economic Outlook Database|url=https://www.imf.org/en/Publications/WEO/weo-database/2020/October|access-date=2021-01-17}}</ref>
 ! # !! Country or U.S. State !! GDP ([[USD]] million)
 |- style="font-weight:bold; background: #eaecf0"
-|   || align="left" | {{noflag}} ''[[Gross world product|World]]'' || 83,266,103
+|   || align="left" | {{noflag}} ''[[Gross world product|World]]'' || 83,220,811
 |-
 | 1 || align="left" | {{flag|United States}} || 20,807,269
 |-
-| 2 || align="left" | {{flag|China}}{{refn|Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.}} || 14,860,775
+| 2 || align="left" | {{flag|China}}{{efn|Figures exclude Taiwan and special administrative regions of Hong Kong and Macau.}} || 14,860,775
 |-
 | 3 || align="left" | {{flag|Japan}} || 4,910,580
 |-
 | 4 || align="left" | {{flag|Germany}} || 3,780,553
 |-
-| 5 || align="left" | '''{{flag|California}}'''{{refn|Note that these are Q3 estimates by the BEA.}} || 3,120,386
+| 5 || align="left" | '''{{flag|California}}'''{{efn|Note that these are Q3 estimates by the BEA.}} || 3,120,386
 |-
 | 6 || align="left" | {{flag|United Kingdom}} || 2,638,296
 |-
@@ -30,7 +30,7 @@
 |-
 | 13 || align="left" | {{flag|South Korea}} || 1,586,786
 |-
-| 14 || align="left" | {{flag|Russia}}{{refn|Figures exclude Republic of Crimea and Sevastopol.}} || 1,464,078
+| 14 || align="left" | {{flag|Russia}}{{efn|Figures exclude Republic of Crimea and Sevastopol.}} || 1,464,078
 |-
 | 15 || align="left" | {{flag|Brazil}} || 1,363,767
 |-
@@ -246,109 +246,109 @@
 |-
 | 121 || align="left" | {{flag|Panama}} || 60,286
 |-
-| 122 || align="left" | {{flag|Syria}}{{refn|Data for Syria's GDP is from the 2011 WEO Database, the latest available from the IMF.}} || 60,043
+| 122 || align="left" | {{flag|Uzbekistan}} || 59,771
 |-
-| 123 || align="left" | {{flag|Uzbekistan}} || 59,771
+| 123 || align="left" | {{flag|Costa Rica}} || 59,645
 |-
-| 124 || align="left" | {{flag|Costa Rica}} || 59,645
+| 124 || align="left" | {{flag|Belarus}} || 57,708
 |-
-| 125 || align="left" | {{flag|Belarus}} || 57,708
+| 125 || align="left" | {{flag|Croatia}} || 56,768
 |-
-| 126 || align="left" | {{flag|Croatia}} || 56,768
+| 126 || align="left" | '''{{flag|South Dakota}}''' || 55,243
 |-
-| 127 || align="left" | '''{{flag|South Dakota}}''' || 55,243
+| 127 || align="left" | {{flag|Lithuania}} || 55,064
 |-
-| 128 || align="left" | {{flag|Lithuania}} || 55,064
+| 128 || align="left" | {{flag|Uruguay}} || 54,135
 |-
-| 129 || align="left" | {{flag|Uruguay}} || 54,135
+| 129 || align="left" | '''{{flag|North Dakota}}''' || 54,044
 |-
-| 130 || align="left" | '''{{flag|North Dakota}}''' || 54,044
+| 130 || align="left" | {{flag|Serbia}} || 51,999
 |-
-| 131 || align="left" | {{flag|Serbia}} || 51,999
+| 131 || align="left" | '''{{flag|Montana}}''' || 51,934
 |-
-| 132 || align="left" | '''{{flag|Montana}}''' || 51,934
+| 132 || align="left" | {{flag|Slovenia}} || 51,802
 |-
-| 133 || align="left" | {{flag|Slovenia}} || 51,802
+| 133 || align="left" | '''{{flag|Alaska}}''' || 50,413
 |-
-| 134 || align="left" | '''{{flag|Alaska}}''' || 50,413
+| 134 || align="left" | {{flag|Venezuela}} || 48,610
 |-
-| 135 || align="left" | {{flag|Venezuela}} || 48,610
+| 135 || align="left" | {{flag|Turkmenistan}} || 47,986
 |-
-| 136 || align="left" | {{flag|Turkmenistan}} || 47,986
+| 136 || align="left" | {{flag|Democratic Republic of the Congo}} || 46,062
 |-
-| 137 || align="left" | {{flag|Democratic Republic of the Congo}} || 46,062
+| 137 || align="left" | {{flag|Jordan}} || 42,609
 |-
-| 138 || align="left" | {{flag|Jordan}} || 42,609
+| 138 || align="left" | {{flag|Azerbaijan}} || 41,666
 |-
-| 139 || align="left" | {{flag|Azerbaijan}} || 41,666
+| 139 || align="left" | {{flag|Tunisia}} || 39,226
 |-
-| 140 || align="left" | {{flag|Tunisia}} || 39,226
+| 140 || align="left" | {{flag|Cameroon}} || 39,036
 |-
-| 141 || align="left" | {{flag|Cameroon}} || 39,036
+| 141 || align="left" | {{flag|Bolivia}} || 38,938
 |-
-| 142 || align="left" | {{flag|Bolivia}} || 38,938
+| 142 || align="left" | {{flag|Uganda}} || 37,733
 |-
-| 143 || align="left" | {{flag|Uganda}} || 37,733
+| 143 || align="left" | '''{{flag|Wyoming}}''' || 36,000
 |-
-| 144 || align="left" | '''{{flag|Wyoming}}''' || 36,000
+| 144 || align="left" | {{flag|Paraguay}} || 35,606
 |-
-| 145 || align="left" | {{flag|Paraguay}} || 35,606
+| 145 || align="left" | {{flag|Bahrain}} || 34,624
 |-
-| 146 || align="left" | {{flag|Bahrain}} || 34,624
+| 146 || align="left" | '''{{flag|Vermont}}''' || 33,278
 |-
-| 147 || align="left" | '''{{flag|Vermont}}''' || 33,278
+| 147 || align="left" | {{flag|Latvia}} || 33,015
 |-
-| 148 || align="left" | {{flag|Latvia}} || 33,015
+| 148 || align="left" | {{flag|Sudan}} || 32,576
 |-
-| 149 || align="left" | {{flag|Sudan}} || 32,576
+| 149 || align="left" | {{flag|Nepal}} || 32,158
 |-
-| 150 || align="left" | {{flag|Nepal}} || 32,158
+| 150 || align="left" | {{flag|Estonia}} || 30,468
 |-
-| 151 || align="left" | {{flag|Estonia}} || 30,468
+| 151 || align="left" | ''{{flag|Macau}} (China)'' || 26,348
 |-
-| 152 || align="left" | ''{{flag|Macau}} (China)'' || 26,348
+| 152 || align="left" | {{flag|Cambodia}} || 26,316
 |-
-| 153 || align="left" | {{flag|Cambodia}} || 26,316
+| 153 || align="left" | {{flag|El Salvador}} || 24,784
 |-
-| 154 || align="left" | {{flag|El Salvador}} || 24,784
+| 154 || align="left" | {{flag|Senegal}} || 24,409
 |-
-| 155 || align="left" | {{flag|Senegal}} || 24,409
+| 155 || align="left" | {{flag|Honduras}} || 23,984
 |-
-| 156 || align="left" | {{flag|Honduras}} || 23,984
+| 156 || align="left" | {{flag|Papua New Guinea}} || 23,283
 |-
-| 157 || align="left" | {{flag|Papua New Guinea}} || 23,283
+| 157 || align="left" | {{flag|Cyprus}} || 23,246
 |-
-| 158 || align="left" | {{flag|Cyprus}} || 23,246
+| 158 || align="left" | {{flag|Trinidad and Tobago}} || 22,718
 |-
-| 159 || align="left" | {{flag|Trinidad and Tobago}} || 22,718
+| 159 || align="left" | {{flag|Libya}} || 21,805
 |-
-| 160 || align="left" | {{flag|Libya}} || 21,805
+| 160 || align="left" | {{flag|Yemen}} || 20,948
 |-
-| 161 || align="left" | {{flag|Yemen}} || 20,948
+| 161 || align="left" | {{flag|Iceland}} || 20,805
 |-
-| 162 || align="left" | {{flag|Iceland}} || 20,805
+| 162 || align="left" | {{flag|Afghanistan}} || 19,006
 |-
-| 163 || align="left" | {{flag|Afghanistan}} || 19,006
+| 163 || align="left" | {{flag|Zambia}} || 18,909
 |-
-| 164 || align="left" | {{flag|Zambia}} || 18,909
+| 164 || align="left" | {{flag|Bosnia and Herzegovina}} || 18,893
 |-
-| 165 || align="left" | {{flag|Bosnia and Herzegovina}} || 18,893
+| 165 || align="left" | {{flag|Lebanon}} || 18,734
 |-
-| 166 || align="left" | {{flag|Lebanon}} || 18,734
+| 166 || align="left" | {{flag|Laos}} || 18,653
 |-
-| 167 || align="left" | {{flag|Laos}} || 18,653
+| 167 || align="left" | {{flag|Mali}} || 17,685
 |-
-| 168 || align="left" | {{flag|Mali}} || 17,685
+| 168 || align="left" | {{flag|Georgia}} || 16,315
 |-
-| 169 || align="left" | {{flag|Georgia}} || 16,315
+| 169 || align="left" | {{flag|Burkina Faso}} || 16,082
 |-
-| 170 || align="left" | {{flag|Burkina Faso}} || 16,082
+| 170 || align="left" | {{flag|Botswana}} || 15,872
 |-
-| 171 || align="left" | {{flag|Botswana}} || 15,872
+| 171 || align="left" | {{flag|Benin}} || 15,292
 |-
-| 172 || align="left" | {{flag|Benin}} || 15,292
+| 172 || align="left" | {{flag|Gabon}} || 15,145
 |-
-| 173 || align="left" | {{flag|Gabon}} || 15,145
+| 173 || align="left" | {{flag|West Bank and Gaza}} || 14,750
 |-
 | 174 || align="left" | {{flag|Mozambique}} || 14,557
 |-
@@ -491,6 +491,4 @@
 | 243 || align="left" | {{flag|Nauru}} || 114
 |-
 | 244 || align="left" | {{flag|Tuvalu}} || 45
-|-
-| 245 || align="left" | {{flag|Pakistan}} || 0
 |}

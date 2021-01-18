@@ -13,54 +13,57 @@ from numpy import nan as NaN
 
 class EconomicData:
     def __init__(self, data_year=2020):
-        self.year = data_year
+        self.data_year = data_year
         self.data_sources = [
                 StateData(data_year), # US States
                 CountryData(data_year) # countries of the world
             ]
         self.data = pd.concat([source.get_data() for source in self.data_sources], ignore_index=True)
 
-    def get_sorted_data(self):
-        return self.data.sort_values(by=['GDP'], ascending=False)
+    def get_sorted_data(self, year):
+        return self.data.sort_values(by=[str(year)], ascending=False)
 
-    def write_wikitable(self):
-        data = self.get_sorted_data()[['Region', 'GDP', 'State?', 'Notes']]
-        world_gdp = data[~data['State?']]['GDP'].sum()
+    def write_wikitable(self, year):
+        year = str(year)
+        data = self.get_sorted_data(year)[['Region', year, 'Type', 'Notes']].dropna() # Fix dropna
+        world_gdp = int(data[data['Type'] == 'Country'][year].sum())
 
-        weo = Reference('World Economic Outlook Database', 'https://www.imf.org/en/Publications/WEO/weo-database/' + str(self.year) + '/October')
+        data.loc[(data['Region'] == 'Georgia') & (data['Type'] == 'US State'), 'Region'] = 'Georgia (U.S. state)|name=Georgia'
 
-        # open file to write
-        out = open('out/wikitables/countrystategdp.txt', 'w')
+        for row in range(len(data)):
+            data.iloc[row, 1] = f'{int(data.iloc[row, 1]):,}'
+
+            if data.iloc[row, 0] in ['Puerto Rico', 'District of Columbia', 'Hong Kong', 'Macau']:
+                data.iloc[row, 0] = "''{{flag|" + data.iloc[row, 0] + '}}' + (' (China)' if data.iloc[row, 0] in ['Hong Kong', 'Macau'] else ' (United States)') + "''"
+            else:
+                data.iloc[row, 0] = '{{flag|' + data.iloc[row, 0] + '}}'
+                if data.iloc[row, 2] == 'US State':
+                    data.iloc[row, 0] = f"'''{data.iloc[row, 0]}'''"
+                if data.iloc[row, 3] != '':
+                    data.iloc[row, 0] += '{{efn|' + data.iloc[row, 3] + '}}'
+
+        data = data[['Region', year]]
 
         # create sortable centered wikitable and include all settings and references
-        out.write('{| class="wikitable sortable" style="text-align: right; margin-left: auto; margin-right: auto; border: none;"')
-        out.write('\n|+ National GDPs and U.S. State GDPs, ' + str(self.year))
-        out.write(weo.ref)
-        out.write('\n! # !! Country or U.S. State !! GDP ([[USD]] million)\n')
-        out.write('|- style="font-weight:bold; background: #eaecf0"\n')
-        out.write("|   || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}\n')
+        wt = Wikitable(
+            data,
+            title='National GDPs and U.S. State GDPs, ' + year,
+            refs=[
+                Reference('World Economic Outlook Database', 'https://www.imf.org/en/Publications/WEO/weo-database/' + str(self.data_year) + '/October')
+            ],
+            column_headers=['#', 'Country or U.S. State', 'GDP ([[USD]] million)'],
+            column_flags=['', 'align="left"', ''],
+            sortable=True,
+            centered=True,
+            right_align=True,
+            special_rows=[
+                "  || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}'
+            ],
+            special_row_style='style="font-weight:bold; background: #eaecf0"',
+            row_style=['align="left"', '', ''],
+        )
 
-        # read data, add to file, and close file
-        for row in range(len(data)):
-            if data.iloc[row, 0] == 'Georgia (U.S. state)':
-                data.iloc[row, 0] += '|name=Georgia'
-            flag = '{{flag|' + data.iloc[row, 0] + '}}'
-
-            # add country descriptors for territories and bold US states
-            if data.iloc[row, 0] in ['Puerto Rico', 'District of Columbia', 'Hong Kong', 'Macau']:
-                flag = "''" + flag + (' (China)' if data.iloc[row, 0] in ['Hong Kong', 'Macau'] else ' (United States)') + "''"
-            elif data.iloc[row, 2]:
-                flag = "'''" + flag + "'''"
-
-            out.write('|-\n| ' + str(row + 1) + ' || align="left" | ' + flag)
-            if data.iloc[row, 3] != '':
-                out.write('{{refn|' + data.iloc[row, 3] + '}}')
-            out.write(' || ' + f'{data.iloc[row, 1]:,}\n')
-
-        out.write('|}\n')
-        out.close()
-
-        print('Successfully created wikitable')
+        wt.write('countrystategdp.txt')
 
     def make_chart(self, start_year=1980, end_year=2020):
         data = self.data
@@ -74,7 +77,7 @@ class EconomicData:
         plt.savefig('out/charts/top_economies.png')
         plt.show()
 
-    def make_map(self, year):
+    def make_map(self, year, continuous=True):
         # see https://towardsdatascience.com/a-complete-guide-to-an-interactive-geographical-map-using-python-f4c5197e23e0
         # read shapefile using Geopandas
         shapefile = 'data/maps/countries_110m/ne_110m_admin_0_countries.shp'
@@ -83,6 +86,9 @@ class EconomicData:
 
         # drop row corresponding to Antarctica
         gdf = gdf.drop(gdf.index[159])
+
+        # fix South Sudan ISO discrepancy
+        gdf.loc[gdf['region'] == 'South Sudan', 'country_code'] = 'SSD'
 
         # substitute West Bank & Gaza data for Palestine
         gdf.loc[gdf['region'] == 'Palestine', 'country_code'] = 'WBG'
@@ -96,15 +102,15 @@ class EconomicData:
         # combine regions into self.data as designated by IMF
         data['nation'] = data['region']
         replacements = {
-            'Kosovo': 'Republic of Serbia',
+            #'Kosovo': 'Republic of Serbia',
             'Northern Cyprus': 'Cyprus',
-            'Western Sahara': 'Morocco',
-            'Greenland': 'Denmark',
+            #'Western Sahara': 'Morocco',
+            #'Greenland': 'Denmark',
             'Somaliland': 'Somalia',
-            'Falkland Islands': 'United Kingdom',
-            'French Southern and Antarctic Lands': 'France',
-            # 'Puerto Rico': 'United States',
-            'New Caledonia': 'France'
+            #'Falkland Islands': 'United Kingdom',
+            #'French Southern and Antarctic Lands': 'France',
+            #'Puerto Rico': 'United States',
+            #'New Caledonia': 'France'
         }
         for item in replacements:
             data.loc[data['region'] == item, 'nation'] = replacements[item]
@@ -137,26 +143,28 @@ class EconomicData:
                 else:
                     labels.append(f'{lower_bound} - {upper_bound}')
 
-        if False:
-            cmap = 'OrRd'
+        if continuous:
+            cmap = 'GnBu'
             norm = mcolors.LogNorm(vmin=data['gdp'].min(), vmax=data['gdp'].max())
+            legend = True
         else:
-            cmap = mcolors.ListedColormap(['lightgrey', 'darkred', 'red', 'darkorange', 'gold', 'lightgreen', 'green'])
+            cmap = mcolors.ListedColormap(['lightgrey', 'palegreen', 'springgreen', 'lime', 'aqua', 'darkturquoise', 'turquoise'])
             boundaries = [-1, 0, 100_000, 500_000, 1_000_000, 3_000_000, 5_000_000, float('inf')]
             norm = mcolors.BoundaryNorm(boundaries, cmap.N, clip=True)
             legend_colors = [mpatches.Patch(color=cmap(b)) for b in range(len(boundaries))]
             plt.legend(legend_colors, get_labels())
+            legend = False
 
 
         # see https://geopandas.org/mapping.html
         data.plot(
             column='gdp',
             ax=ax,
-            #legend=True,
-            #legend_kwds={
-            #    'label': 'GDP by Country (' + str(year) + ')',
-            #    'orientation': 'horizontal'
-            #},
+            legend=legend,
+            legend_kwds={
+                'label': 'GDP by Country (' + str(year) + ')',
+                'orientation': 'horizontal'
+            },
             #scheme='quintiles',
             missing_kwds={
                 'color': 'lightgrey'
@@ -290,22 +298,70 @@ class StateData(DataSource):
             self.add_note('California', 'Note that these are Q3 estimates by the BEA.')
 
 
-class Reference:
-    current_date = str(datetime.date.today())
+class Wikitable:
+    def __init__(self, data, title='', refs=[], column_headers=[], column_flags=[], sortable=False, right_align=False, centered=False, row_style=None, ranked=True, special_rows=[], special_row_style=''):
+        self.data = data
+        self.title = title
+        self.refs = [r.ref for r in refs]
+        self.column_headers = column_headers
 
+        class_flags, style_flags = [], []
+        if sortable:
+            class_flags.append('sortable')
+        if right_align:
+            style_flags.append('text-align: right;')
+        if centered:
+            style_flags.append('margin-left: auto; margin-right: auto; border: none;')
+
+        self.header = f'{{| class="wikitable {" ".join(class_flags)}" style="{" ".join(style_flags)}"'
+        blanks = ['' for _ in range(len(self.column_headers))]
+
+        self.ranked = ranked
+        self.row_style = row_style if row_style else blanks
+        self.special_rows = special_rows
+        self.special_row_style = special_row_style
+
+    def write(self, filename):
+        # open file to write
+        out = open('out/wikitables/' + filename, 'w')
+
+        # write header lines
+        out.write(f'{self.header}\n|+ {self.title}{"".join(self.refs)}\n! {" !! ".join(self.column_headers)}\n')
+
+        # special rows
+        for row in self.special_rows:
+            out.write(f'|- {self.special_row_style}\n| {row}\n')
+
+        # apply row styles
+        for col in range(len(self.column_headers)):
+            if self.row_style[col] != '':
+                for row in range(len(self.data)):
+                    self.data.iloc[row, col] = f'{self.row_style[col]} | {self.data.iloc[row, col]}'
+
+        for i in range(len(self.data)):
+            rank = f'{i + 1} || ' if self.ranked else ''
+            out.write('|-\n| ' + rank + ' || '.join([str(x) for x in self.data.iloc[i]]) + '\n')
+
+
+        out.write('|}\n')
+        out.close()
+
+        print('Successfully created wikitable at', filename)
+
+
+class Reference:
     def __init__(self, title, url):
         self.title = title
         self.url = url
-        info = f'cite web|title = {title}|url={url}|access-date={Reference.current_date}'
+        self.access_date = str(datetime.date.today())
+        info = f'cite web|title = {title}|url={url}|access-date={self.access_date}'
         self.ref = '<ref>{{' + info + '}}</ref>'
 
 
 def main():
     pd.set_option('display.max_rows', None)
     ed = EconomicData()
-    # ed.make_chart()
     ed.make_map(2019)
-    # ed.write_wikitable()
 
 
 main()
