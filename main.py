@@ -87,6 +87,9 @@ class EconomicData:
         # drop row corresponding to Antarctica
         gdf = gdf.drop(gdf.index[159])
 
+        # fix South Sudan ISO discrepancy
+        gdf.loc[gdf['region'] == 'South Sudan', 'country_code'] = 'SSD'
+
         # substitute West Bank & Gaza data for Palestine
         gdf.loc[gdf['region'] == 'Palestine', 'country_code'] = 'WBG'
 
