@@ -13,22 +13,36 @@ from numpy import nan as NaN
 
 class EconomicData:
     def __init__(self, data_year=2020):
-        self.year = data_year
+        self.data_year = data_year
         self.data_sources = [
                 StateData(data_year), # US States
                 CountryData(data_year) # countries of the world
             ]
         self.data = pd.concat([source.get_data() for source in self.data_sources], ignore_index=True)
 
-    def get_sorted_data(self):
-        return self.data.sort_values(by=['GDP'], ascending=False)
+    def get_sorted_data(self, year):
+        return self.data.sort_values(by=[str(year)], ascending=False)
 
     def write_wikitable(self, year):
         year = str(year)
-        data = self.get_sorted_data()[['Region', year, 'Type', 'Notes']]
-        world_gdp = data[data['Type'] == 'Country'][year].sum()
+        data = self.get_sorted_data(year)[['Region', year, 'Type', 'Notes']].dropna() # Fix dropna
+        world_gdp = int(data[data['Type'] == 'Country'][year].sum())
 
-        data[data['Type'] == 'US State']
+        data.loc[(data['Region'] == 'Georgia') & (data['Type'] == 'US State'), 'Region'] = 'Georgia (U.S. state)|name=Georgia'
+
+        for row in range(len(data)):
+            data.iloc[row, 1] = f'{int(data.iloc[row, 1]):,}'
+
+            if data.iloc[row, 0] in ['Puerto Rico', 'District of Columbia', 'Hong Kong', 'Macau']:
+                data.iloc[row, 0] = "''{{flag|" + data.iloc[row, 0] + '}}' + (' (China)' if data.iloc[row, 0] in ['Hong Kong', 'Macau'] else ' (United States)') + "''"
+            else:
+                data.iloc[row, 0] = '{{flag|' + data.iloc[row, 0] + '}}'
+                if data.iloc[row, 2] == 'US State':
+                    data.iloc[row, 0] = f"'''{data.iloc[row, 0]}'''"
+                if data.iloc[row, 3] != '':
+                    data.iloc[row, 0] += '{{efn|' + data.iloc[row, 3] + '}}'
+
+        data = data[['Region', year]]
 
         # create sortable centered wikitable and include all settings and references
         wt = Wikitable(
@@ -43,29 +57,13 @@ class EconomicData:
             centered=True,
             right_align=True,
             special_rows=[
-                "|   || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}\n'
+                "  || align=\"left\" | {{noflag}} ''[[Gross world product|World]]'' || " + f'{world_gdp:,}'
             ],
-            special_row_style='|- style="font-weight:bold; background: #eaecf0"'
+            special_row_style='style="font-weight:bold; background: #eaecf0"',
+            row_style=['align="left"', '', ''],
         )
 
         wt.write('countrystategdp.txt')
-
-        # read data, add to file, and close file
-        for row in range(len(data)):
-            if data.iloc[row, 0] == 'Georgia (U.S. state)':
-                data.iloc[row, 0] += '|name=Georgia'
-            flag = '{{flag|' + data.iloc[row, 0] + '}}'
-
-            # add country descriptors for territories and bold US states
-            if data.iloc[row, 0] in ['Puerto Rico', 'District of Columbia', 'Hong Kong', 'Macau']:
-                flag = "''" + flag + (' (China)' if data.iloc[row, 0] in ['Hong Kong', 'Macau'] else ' (United States)') + "''"
-            elif data.iloc[row, 2]:
-                flag = "'''" + flag + "'''"
-
-            out.write('|-\n| ' + str(row + 1) + ' || align="left" | ' + flag)
-            if data.iloc[row, 3] != '':
-                out.write('{{refn|' + data.iloc[row, 3] + '}}')
-            out.write(' || ' + f'{data.iloc[row, 1]:,}\n')
 
     def make_chart(self, start_year=1980, end_year=2020):
         data = self.data
@@ -298,7 +296,8 @@ class StateData(DataSource):
 
 
 class Wikitable:
-    def __init__(self, data, title='', refs=[], column_headers=[], column_flags=[], sortable=False, align_right=False, centered=False, row_style=None, special_rows=[], special_row_style=''):
+    def __init__(self, data, title='', refs=[], column_headers=[], column_flags=[], sortable=False, right_align=False, centered=False, row_style=None, ranked=True, special_rows=[], special_row_style=''):
+        self.data = data
         self.title = title
         self.refs = [r.ref for r in refs]
         self.column_headers = column_headers
@@ -306,40 +305,40 @@ class Wikitable:
         class_flags, style_flags = [], []
         if sortable:
             class_flags.append('sortable')
-        if align_right:
+        if right_align:
             style_flags.append('text-align: right;')
         if centered:
             style_flags.append('margin-left: auto; margin-right: auto; border: none;')
 
         self.header = f'{{| class="wikitable {" ".join(class_flags)}" style="{" ".join(style_flags)}"'
+        blanks = ['' for _ in range(len(self.column_headers))]
 
-        if row_style:
-            self.row_style = row_style
-        else:
-            self.row_style = ['' for _ in range(len(self.column_headers))]
+        self.ranked = ranked
+        self.row_style = row_style if row_style else blanks
         self.special_rows = special_rows
         self.special_row_style = special_row_style
 
-    def write(filename):
+    def write(self, filename):
         # open file to write
         out = open('out/wikitables/' + filename, 'w')
 
-        # write header liens
-        out.write(f'{self.header}\n|+ {self.title}{self.refs}\n! {" !! ".join(self.column_headers)}\n')
+        # write header lines
+        out.write(f'{self.header}\n|+ {self.title}{"".join(self.refs)}\n! {" !! ".join(self.column_headers)}\n')
 
         # special rows
-        for row in special_rows:
-            out.write(f'|- {self.special_row_style}\n|{row}\n')
+        for row in self.special_rows:
+            out.write(f'|- {self.special_row_style}\n| {row}\n')
 
         # apply row styles
         for col in range(len(self.column_headers)):
-            if row_style[col] != '':
-                for row in len(self.data):
-                    self.data.iloc[row, col] = f'{row_style[col]} | {data.iloc[row, col]}'
+            if self.row_style[col] != '':
+                for row in range(len(self.data)):
+                    self.data.iloc[row, col] = f'{self.row_style[col]} | {self.data.iloc[row, col]}'
 
         for i in range(len(self.data)):
-            out.write('|-\n| ')
-            row = ' ||'.join(list(self.data.iloc[row, :]))
+            rank = f'{i + 1} || ' if self.ranked else ''
+            out.write('|-\n| ' + rank + ' || '.join([str(x) for x in self.data.iloc[i]]) + '\n')
+
 
         out.write('|}\n')
         out.close()
@@ -359,9 +358,7 @@ class Reference:
 def main():
     pd.set_option('display.max_rows', None)
     ed = EconomicData()
-    # ed.make_chart()
-    ed.make_map(2019, continuous=False)
-    # ed.write_wikitable()
+    ed.make_map(2019)
 
 
 main()
